@@ -9,7 +9,6 @@
   <!-- Replace with your own title and description. -->
   <title>Core Keeper Mods Documentation</title>
   <meta name="description" content="A Documentation Library for the GitHub Organization `Core Keeper Mods` mods.">
-  <link rel="icon" type="image/png" href="../corelib-profile.png">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet">
@@ -44,7 +43,14 @@
       { folder: 'v4/', label: 'v2.0.1', default: true },
       { folder: 'v3/', label: 'v2.0.0', default: false }
     ];
-    const versionFolder = sessionStorage.getItem("basePath");
+    let basePath = sessionStorage.getItem("basePath");
+    console.log(`Base Path: ${basePath}`);
+    if (basePath == null) {
+      console.log('run');
+      let defaultVersion = versions.find((v) => v.default).folder;
+      sessionStorage.setItem("basePath", defaultVersion);
+    }
+    const versionFolder = window.location.pathname.split('/')[1];
     // Docsify Configuration (see https://docsify.js.org/#/configuration)
     window.$docsify = {
       name: 'Core Library',
