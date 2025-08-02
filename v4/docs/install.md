@@ -30,7 +30,7 @@ Add following line at the beginning to your dependencies:
 "ck.modding.corelib": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/CoreLibPackage#main",
 ```
 It will look like this after adding it:
-```json lines
+```json
 {
   "dependencies": {
     "ck.modding.corelib": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/CoreLibPackage#main",

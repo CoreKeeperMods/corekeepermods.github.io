@@ -1,3 +1,0 @@
-- [Home](/zh-cn/)
-- <b>入门</b>
-- [核心库](/zh-cn/docs/install.md)
