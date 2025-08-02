@@ -1,1 +1,27 @@
+:root {
+    --text-color-base: var(--base-color);
+    --navbar-menu-link-color--active: var(--theme-color);
+}
 
+.search .clear-button.show {
+    margin: auto;
+}
+
+.nav {
+    position: absolute;
+    right: 0;
+    margin-top: 4em;
+}
+
+.app-nav > ul > li ul {
+    overflow-x: hidden;
+    width: max-content;
+}
+
+.page_toc {
+    border-left-color: var(--base-color);
+}
+
+.version-selector select {
+    border-radius: 5px;
+}

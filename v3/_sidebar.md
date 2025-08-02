@@ -1,0 +1,3 @@
+- [Home](/)
+- <b>Getting started</b>
+- [Install](docs/install.md)

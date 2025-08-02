@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{@ky_wong/docsify-version-plugin, docsify, docsify-copy-code, docsify-dark-switcher, docsify-select, docsify-tabs, docsify-themeable, docsify-toc, docsify-versioned-plugin, search, zoom-image}" />
+  </component>
+</project>
