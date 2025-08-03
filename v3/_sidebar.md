@@ -1,3 +1,17 @@
-- [Home](/)
-- <b>Getting started</b>
-- [Install](docs/install.md)
+- [CoreLib](/)
+- <b>Submodules</b>
+  - [CoreLib.Audio](Audio.md)
+  - [CoreLib.Commands](Commands.md)
+  - [CoreLib.Drops](Drops.md)
+  - [CoreLib.Entity](Entity.md)
+      - <b>Entity Guides</b>
+        - [Blocks](Guides/Blocks.md)
+        - [Items](Guides/Items.md)
+        - [Specifics](Guides/Specifics.md)
+  - [CoreLib.Equipment](Equipment.md)
+  - [CoreLib.Localization](Localization.md)
+  - [CoreLib.Resources](Resources.md)
+  - [CoreLib.RewiredExtension](RewiredExtension.md)
+  - [CoreLib.Tilesets](Tilesets.md)
+  - [CoreLib.UserInterface](UserInterface.md)
+- [Changelog](CHANGELOG.md)

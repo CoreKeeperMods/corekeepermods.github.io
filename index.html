@@ -10,8 +10,6 @@
   <title>Core Keeper Mods Documentation</title>
   <meta name="description" content="A Documentation Library for the GitHub Organization `Core Keeper Mods` mods.">
   <link rel="icon" type="image/png" href="corelib-profile.png" />
-
-  <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css" />-->
   
   <!-- Themes (light + dark) -->
   <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
@@ -20,6 +18,8 @@
   <!-- Plugin Styles -->
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
+  <link href="https:///prismjs@v1.x/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="style.css">
@@ -27,13 +27,7 @@
 </head>
 
 <body>
-
-  <!--<nav>
-    <a>Translations
-      <a href="#/">EN</a>
-      <a href="#/zh-cn/">简体中文</a>
-    </a>
-  </nav>-->
+  <nav></nav>
   <div id="app">Loading Mod Info...</div>
 
   <script>
@@ -50,9 +44,11 @@
 
     window.$docsify = {
       name: 'Core Library',
+      auto2top: true,
       loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 1,
+      loadNavbar: false,
+      maxLevel: 3,
+      subMaxLevel: 0,
       repo: 'https://github.com/CoreKeeperMods',
       // Search Plugin Configuration
       search: {
@@ -68,13 +64,73 @@
       basePath: sessionStorage.getItem("basePath"),
       versions: versions,
       versionSelectorLabel: 'Version',
+
+      // pagination config
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      
+      //copy code config
+      copyCode: {
+        buttonText: {
+          '/zh-cn/': '点击复制',
+          '/ru/': 'Скопировать в буфер обмена',
+          '/de-de/': 'Klicken Sie zum Kopieren',
+          '/es/': 'Haga clic para copiar',
+          '/': 'Copy to clipboard',
+        },
+        errorText: {
+          '/zh-cn/': '错误',
+          '/ru/': 'ошибка',
+          '/': 'Error',
+        },
+        successText: {
+          '/zh-cn/': '复制',
+          '/ru/': 'Скопировано',
+          '/de-de/': 'Kopiert',
+          '/es/': 'Copiado',
+          '/': 'Copied',
+        },
+      },
+      
+      //tabs config
+      tabs: {
+        persist: true, // default
+        sync: true, // default
+        theme: 'classic', // default
+        tabComments: true, // default
+        tabHeadings: true // default
+      },
+      
+      //table of contents
+      toc: {
+        scope: '.markdown-section',
+        headings: 'h1, h2',
+        title: 'Table of Contents',
+      },
+
+      //remote markdown
+      remoteMarkdown: {
+        tag: 'changelogURL',
+      },
+
+      //scroll to top
+      scrollToTop: {
+        auto: true,
+        text: 'Top',
+        right: 15,
+        bottom: 15,
+        offset: 500,
+      },
     };
   </script>
 
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-  
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
@@ -82,6 +138,13 @@
   <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
   <script src="docsify-version-plugin.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
+  <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
 
 </body>
 </html>
