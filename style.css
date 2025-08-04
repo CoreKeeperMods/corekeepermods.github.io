@@ -1,6 +1,23 @@
-:root {
-    --text-color-base: var(--base-color);
-    --navbar-menu-link-color--active: var(--theme-color);
+﻿:root {
+    --text-color-base: var(--sidebar-nav-link-color);
+}
+
+.docsify-dark-mode .markdown-section h1,
+.docsify-dark-mode .markdown-section h2,
+.docsify-dark-mode .markdown-section h3,
+.docsify-dark-mode .markdown-section h4,
+.docsify-dark-mode .markdown-section h5,
+.docsify-dark-mode .markdown-section h6 {
+    color: var(--dark-heading-color)
+}
+
+.markdown-section h1 a,
+.markdown-section h2 a,
+.markdown-section h3 a,
+.markdown-section h4 a,
+.markdown-section h5 a,
+.markdown-section h6 a {
+    text-decoration: none;
 }
 
 .search .clear-button.show {
@@ -8,7 +25,7 @@
 }
 
 .page_toc {
-    border-left-color: var(--base-color);
+    border-left-color: rgba(211, 211, 211, 0.2);
     max-height: 500px;
     overflow: scroll;
 }
@@ -17,7 +34,7 @@
     border-radius: 5px;
 }
 
-h1#core-library-v4x {
+h1:first-child {
     text-align: center;
 }
 

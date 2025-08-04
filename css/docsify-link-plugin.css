@@ -1,0 +1,8 @@
+﻿i.fa-link {
+    margin: 5px;
+    color: var(--sidebar-nav-link-color);
+}
+
+i.fa-link:hover {
+    color: var(--sidebar-nav-link-color--active);
+}
