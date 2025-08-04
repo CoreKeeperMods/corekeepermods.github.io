@@ -1,4 +1,8 @@
-﻿function getVersionPath(path, versions, defaultVersion) {
+﻿/*
+* Edited docsify-version-plugin
+* https://github.com/keiyin-wong/docsify-version-plugin
+* */
+function getVersionPath(path, versions, defaultVersion) {
     /**
      * If the path is /, /README.md or /index.html, we want to redirect to the default version.
      * Otherwise, we want to redirect to the versioned path.

@@ -7,11 +7,6 @@
     margin: auto;
 }
 
-.app-nav > ul > li ul {
-    overflow-x: hidden;
-    width: max-content;
-}
-
 .page_toc {
     border-left-color: var(--base-color);
     max-height: 500px;

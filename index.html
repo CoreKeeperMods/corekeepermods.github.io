@@ -18,12 +18,11 @@
   <!-- Plugin Styles -->
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
-  <link href="https:///prismjs@v1.x/themes/prism.css" rel="stylesheet" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https:///prismjs@v1.x/themes/prism.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="style.css">
-  
 </head>
 
 <body>
@@ -32,8 +31,7 @@
 
   <script>
     let versions = [
-      { folder: 'v4/', label: 'v4.x', default: true },
-      { folder: 'v3/', label: 'v3.x', default: false }
+      { folder: 'v3/', label: 'v3.x', default: true }
     ];
     let basePath = sessionStorage.getItem("basePath");
     if (basePath == null) {
@@ -120,7 +118,8 @@
       //scroll to top
       scrollToTop: {
         auto: true,
-        text: 'Top',
+        text: '',
+        icon: 'fa fa-arrow-up',
         right: 15,
         bottom: 15,
         offset: 500,
@@ -140,7 +139,8 @@
   <script src="docsify-version-plugin.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
-  <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+  <script src="docsify-scroll-to-top-plugin.js"></script>
+  <script src="docsify-dark-switcher-plugin.js"></script>
 
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
