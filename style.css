@@ -27,7 +27,7 @@
 .page_toc {
     border-left-color: rgba(211, 211, 211, 0.2);
     max-height: 500px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .version-selector select {
