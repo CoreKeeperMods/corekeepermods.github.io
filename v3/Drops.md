@@ -1,4 +1,4 @@
-﻿# Loot Drop Tables Module <!-- {docsify-ignore-all} -->
+﻿# Loot Drop Tables Module
 Loot Drop Tables Module is a CoreLib submodule that allows to add, modify and remove loot drops.
 
 ## Usage example:

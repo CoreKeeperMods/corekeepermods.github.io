@@ -1,4 +1,4 @@
-﻿# User Interface Module <!-- {docsify-ignore-all} -->
+﻿# User Interface Module
 User Interface Module is a CoreLib submodule that allows to create modded user interfaces. The primary use case is custom UI for custom objects, but can be used to other purposes.
 
 ## Pre-release module note

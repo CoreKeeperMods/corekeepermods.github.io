@@ -1,4 +1,4 @@
-﻿# Entity Module <!-- {docsify-ignore-all} -->
+﻿# Entity Module
 Entity Module is a CoreLib submodule that helps adding specific entities. With mod SDK it's already possible to add custom entities, so this submodule is mostly a helper module.
 
 ## Usage example:
