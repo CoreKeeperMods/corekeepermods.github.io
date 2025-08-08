@@ -37,7 +37,6 @@ export function breadcrumbPlugin(hook, vm) {
         const title = getPageTitle(vm.route, vm.compiler.cacheTOC)
         const urlParts = getUrlParts(url)
         const readableUrlParts = sanitizeUrlParts(urlParts)
-        console.log(readableUrlParts)
         const homeLink = options.showHome || !isHome ? getHomeLink(isHome) : ''
         const ul = generateAccessibleBreadcrumb(homeLink, getListItems(readableUrlParts, urlParts, title))
         next(ul + html)
@@ -70,7 +69,6 @@ export const getUrlParts = (url) =>
  */
 export const sanitizeUrlParts = (urlParts) =>
     urlParts.map(part => {
-        console.log(part);
         return options.alias[part] || part.replace(/[._-]/g, ' ')
     })
 
