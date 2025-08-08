@@ -1,10 +1,12 @@
 ﻿/*
 * Edited docsify-scroll-to-top
 * https://github.com/zhengxiangqi/docsify-scroll-to-top
+* 
+* Changed look to allow for using docsify variables
 * */
 
 var CONFIG = {auto: true, text: 'Top', icon: null, right: 15, bottom: 15, offset: 500};
-var install = function (hook, vm) {
+var scrollToTopPlugin = function (hook, vm) {
     var opts = vm.config.scrollToTop || CONFIG;
     CONFIG.auto = opts.auto && typeof opts.auto === 'boolean' ? opts.auto : CONFIG.auto;
     CONFIG.text = opts.text && typeof opts.text === 'string' ? opts.text : CONFIG.text;
@@ -68,4 +70,5 @@ var install = function (hook, vm) {
     });
 };
 
-$docsify.plugins = [].concat(install, $docsify.plugins);
+$docsify = $docsify || {};
+$docsify.plugins = [].concat(scrollToTopPlugin, $docsify.plugins || []);

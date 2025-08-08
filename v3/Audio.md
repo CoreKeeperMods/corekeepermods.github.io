@@ -1,4 +1,4 @@
-﻿# Audio Module
+﻿# Audio Module <!-- {docsify-ignore-all} -->
 Audio Module is a CoreLib submodule that allows to add custom music and sound effects
 
 ## Usage example:

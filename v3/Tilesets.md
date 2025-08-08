@@ -1,4 +1,4 @@
-﻿# Tilesets Module
+﻿# Tilesets Module <!-- {docsify-ignore-all} -->
 Tilesets Module is a CoreLib submodule that allows to register new Tilesets.
 
 ## Usage example:

@@ -1,4 +1,4 @@
-﻿# Localization Module
+﻿# Localization Module <!-- {docsify-ignore-all} -->
 Localization Module is a CoreLib submodule that allows to register new I2 localization strings.
 
 Please note that you can also add custom localization terms using a `.csv` file. Place it in `Localization` folder in root of your mod project.

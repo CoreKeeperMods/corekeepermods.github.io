@@ -1,4 +1,4 @@
-﻿# Specifics guide
+﻿# Specifics guide <!-- {docsify-ignore-all} -->
 This guide has many sections dedicated to some specific kind of entity. What is explained here is only the difference from it's closest base
 
 ## Animated block

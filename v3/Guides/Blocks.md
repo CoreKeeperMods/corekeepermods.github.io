@@ -1,4 +1,4 @@
-﻿# Making entities with custom visuals
+﻿# Making entities with custom visuals <!-- {docsify-ignore-all} -->
 Entities such as blocks, enemies, projectiles, etc need a visual part to function. This guide explains how to do so on a example of a block. Process is similar for other kinds of entities
 
 Main difference between an item and a block in Core Keeper is the custom visual prefab. This prefab is what you see in the world. You must create and assign it, for entity to be spawnable and placeable.

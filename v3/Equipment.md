@@ -1,4 +1,4 @@
-﻿# Equipment Slot Module
+﻿# Equipment Slot Module <!-- {docsify-ignore-all} -->
 Equipment Slot Module is a CoreLib submodule that allows to create custom equipment slots, which define how user should be using the item. Equipment slots drive every tool in Core Keeper.
 
 ## Usage example

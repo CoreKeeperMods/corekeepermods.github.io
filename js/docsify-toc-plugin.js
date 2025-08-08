@@ -1,11 +1,13 @@
-﻿var defaultOptions = {
-    headings: 'h1, h2',
-    scope: '.markdown-section',
+﻿/*
+ * Edited docsify-toc
+ * https://github.com/mrpotatoes/docsify-toc
+ * 
+ * Fixed the issue where Linked Headers were being setup as external links instead of internal id headers
+ * ex: # [Github](https://github.com/mrpotatoes/docsify-toc)
+ */
 
-    // To make work
-    title: 'Contents',
-    listType: 'ul',
-}
+
+var defaultOptions = { headings: 'h1, h2', scope: '.markdown-section', title: 'Contents', listType: 'ul' }
 
 // Element builders
 var tocHeading = function(Title) {
@@ -20,13 +22,10 @@ var aTag = function(src) {
     var span = document.createElement('span');
     span.textContent = src.textContent;
     
-    // Use this to clip text w/ HTML in it.
-    // https://github.com/arendjr/text-clipper
     a.appendChild(span);
-    a.href = src.firstChild.href;
+    a.href = src.querySelector('a.anchor').href;
     a.onclick = tocClick
     
-    // In order to remove this gotta fix the styles.
     a.setAttribute('class', 'anchor');
 
     return a
@@ -117,7 +116,7 @@ var buildTOC = function(options) {
 };
 
 // Docsify plugin functions
-function plugin(hook, vm) {
+function tocPlugin(hook, vm) {
     var userOptions = vm.config.toc;
 
     hook.mounted(function () {
@@ -168,5 +167,6 @@ function plugin(hook, vm) {
 }
 
 // Docsify plugin options
-window.$docsify['toc'] = Object.assign(defaultOptions, window.$docsify['toc']);
-window.$docsify.plugins = [].concat(plugin, window.$docsify.plugins);
+$docsify = $docsify || {};
+$docsify['toc'] = Object.assign(defaultOptions, $docsify['toc']);
+$docsify.plugins = [].concat(tocPlugin, $docsify.plugins || []);

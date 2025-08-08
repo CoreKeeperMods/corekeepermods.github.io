@@ -1,4 +1,4 @@
-﻿# Commands Module
+﻿# Commands Module <!-- {docsify-ignore-all} -->
 Commands Module is a CoreLib submodule that allows to add new Chat Commands.
 
 This submodule also enables the use of Quantum console if you prefer it. Use `Del` key on your keyboard to open it. Use `chat` command to use chat commands from it. For example: `chat give iron bar 5`

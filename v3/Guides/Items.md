@@ -1,4 +1,4 @@
-﻿# Making custom items
+﻿# Making custom items <!-- {docsify-ignore-all} -->
 If you don't know how to make a certain type of item, find it in the Unity Editor and copy the prefab. There you should see everything that makes it tick.
 
 Properties of `ObjectAuthoring` tha are relevant:

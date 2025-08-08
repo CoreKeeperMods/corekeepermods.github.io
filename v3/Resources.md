@@ -1,4 +1,4 @@
-﻿# Mod Resources Module
+﻿# Mod Resources Module <!-- {docsify-ignore-all} -->
 Mod Resources Module is a CoreLib submodule that organises mod resources and facilitates loading of assets
 
 ## How to use the module:

@@ -1,6 +1,8 @@
 ﻿/*
 * Edited docsify-dark-switcher
 * https://github.com/w3teal/docsify-dark-switcher
+* 
+* Setup inside the sidebar. As the toc or github banner are blocking it.
 * */
 
 function docsifyDarkSwitcher() {
@@ -32,7 +34,7 @@ function applyInitialMode() {
     }
 }
 
-var install = function (hook, vm) {
+var darkSwitcherPlugin = function (hook, vm) {
     hook.mounted(function() {
         var themeSwitcherBtn = document.createElement('button');
         themeSwitcherBtn.id = "docsify-dark-switcher";
@@ -44,4 +46,5 @@ var install = function (hook, vm) {
     });
 }
 
-$docsify.plugins = [].concat(install, $docsify.plugins);
+$docsify = $docsify || {};
+$docsify.plugins = [].concat(darkSwitcherPlugin, $docsify.plugins || []);

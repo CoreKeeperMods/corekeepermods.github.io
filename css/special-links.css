@@ -1,0 +1,48 @@
+﻿.specialLink-container {
+    display: inline-flex;
+    width: 100%;
+}
+
+.specialLink-container > ul {
+    display: grid;
+    grid-template-columns: repeat(1,minmax(0,1fr));
+    width: 100%;
+    gap: calc(.25rem*4);
+    padding: 0;
+    margin: 0;
+}
+
+.specialLink-container > ul > li {
+    list-style: none;
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+}
+
+.specialLink-container > ul > li > p {
+    margin: 0;
+}
+
+.markdown-section a.specialLink {
+    display: flex;
+    padding: 1em;
+    text-decoration: none;
+    border: 0.5px solid var(--text-color-base);
+    box-shadow: -1px 1px 1px 1px var(--text-color-base-complement);
+    border-radius: 3px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.markdown-section a.specialLink:hover {
+    text-decoration: none;
+    color: var(--dark-theme-color);
+    border-color: var(--dark-theme-color);
+}
+
+@media (min-width: 640px) {
+    .specialLink-container > ul:not(:has( > li:only-child)) {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}

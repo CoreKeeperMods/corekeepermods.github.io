@@ -11,16 +11,23 @@
   <meta name="description" content="A Documentation Library Core Library (CoreLib).">
   <link rel="icon" type="image/png" href="corelib-profile.png" />
   
-  <!-- Themes (light + dark) -->
+  <!-- Theme-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="dark">
 
   <!-- Plugin Styles -->
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
   <link rel="stylesheet" href="https:///prismjs@v1.x/themes/prism.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
+  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
+  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
+  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
+
   <link rel="stylesheet" href="css/docsify-dark-switcher-plugin.css"/>
   <link rel="stylesheet" href="css/docsify-link-plugin.css"/>
+  <link rel="stylesheet" href="css/docsify-fix-tips.css"/>
+  <link rel="stylesheet" href="css/special-links.css"/>
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="style.css">
@@ -32,7 +39,8 @@
 
   <script>
     let versions = [
-      { folder: 'v3/', label: 'v3.x', default: true }
+      { folder: 'v3/', label: 'v3.x', default: true },
+      { folder: 'v4/', label: 'v4.x', default: false },
     ];
     let basePath = sessionStorage.getItem("basePath");
     if (basePath == null) {
@@ -46,9 +54,13 @@
       auto2top: true,
       loadSidebar: true,
       loadNavbar: false,
-      maxLevel: 3,
-      subMaxLevel: 0,
-      repo: 'https://github.com/CoreKeeperMods',
+      maxLevel: 1,
+      subMaxLevel: 1,
+      repo: 'https://github.com/CoreKeeperMods/CoreLib',
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      
       // Search Plugin Configuration
       search: {
         maxAge: 86400000,
@@ -97,23 +109,21 @@
       
       //tabs config
       tabs: {
-        persist: true, // default
-        sync: true, // default
-        theme: 'classic', // default
-        tabComments: true, // default
-        tabHeadings: true // default
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: false
       },
       
       //table of contents
       toc: {
-        scope: '.markdown-section',
-        headings: 'h1, h2',
-        title: 'Table of Contents',
+        title: 'Table of Contents'
       },
 
       //remote markdown
       remoteMarkdown: {
-        tag: 'changelogURL',
+        tag: 'changelogURL'
       },
 
       //scroll to top
@@ -123,7 +133,29 @@
         icon: 'fa fa-arrow-up',
         right: 15,
         bottom: 15,
-        offset: 500,
+        offset: 500
+      },
+
+      //link headers
+      linkHeaders: {
+        class: 'fa fa-link fa-2xs'
+      },
+
+      // select options
+      select: {
+        useSelectHeadingComment: true,
+        selected: {
+          "version-select": "Specific Version",
+        },
+      },
+      
+      //breadcrumbs
+      breadcrumb: {
+        size: 'normal',
+        alias: {
+          'modsdk-bug-fixes': 'ModSDK Bug Fixes',
+          'modules': 'Main Module',
+        }
       },
     };
   </script>
@@ -135,19 +167,22 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="js/docsify-toc-plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
-  <script src="js/docsify-version-plugin.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
+  <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
+
+  <script src="js/docsify-toc-plugin.js"></script>
+  <script src="js/docsify-version-plugin.js"></script>
   <script src="js/docsify-scroll-to-top-plugin.js"></script>
   <script src="js/docsify-dark-switcher-plugin.js"></script>
-  <script src="js/docsify-link-plugin.js"></script>
+  <script src="js/docsify-link-headers-plugin.js"></script>
+  <script src="js/docsify-fix-tips.js"></script>
+  <script src="js/docsify-breadcrumb-plugin.js" type="module"></script>
 
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-  <script src="https://www.w3schools.com/lib/w3color.js"></script>
 
 </body>
 </html>

@@ -1,6 +1,8 @@
 ﻿/*
 * Edited docsify-version-plugin
 * https://github.com/keiyin-wong/docsify-version-plugin
+* 
+* No Change yet
 * */
 function getVersionPath(path, versions, defaultVersion) {
     /**
@@ -93,8 +95,6 @@ function versionedDocsPlugin(hook, vm) {
     });
 }
 
-window.$docsify.plugins = [].concat(
-    versionedDocsPlugin,
-    window.$docsify.plugins
-);
+$docsify = $docsify || {};
+$docsify.plugins = [].concat(versionedDocsPlugin, $docsify.plugins || []);
 

@@ -1,0 +1,4 @@
+﻿.markdown-section .tip, .markdown-section .warn {
+    display: flex;
+    align-items: center;
+}

@@ -1,4 +1,4 @@
-﻿# Rewired Extension Module
+﻿# Rewired Extension Module <!-- {docsify-ignore-all} -->
 Rewired Extension Module is a CoreLib submodule that allows to register new Rewired key binds. Users will be able to rebind them to what they want.
 
 ## Usage example:

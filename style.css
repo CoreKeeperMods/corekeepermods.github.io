@@ -1,5 +1,14 @@
 ﻿:root {
     --text-color-base: var(--sidebar-nav-link-color);
+    --blockquote-em-font-style: italic;
+    --text-color-base-complement: color(from var(--text-color-base) display-p3 calc(r - 0.6) calc(g - 0.6) calc(b - 0.6));
+    --docsifyselect-menu-background: var(--base-background-color);
+    --docsifyselect-menu-border-color: var(--text-color-base);
+    --docsifyselect-menu-line-height: 22px;
+}
+
+.docsify-dark-mode .docsify-select-menu {
+    --docsifyselect-menu-background: var(--dark-base-background);
 }
 
 .docsify-dark-mode .markdown-section h1,
@@ -34,10 +43,11 @@
     border-radius: 5px;
 }
 
-h1:first-child {
+.markdown-section h1:first-of-type {
     text-align: center;
 }
 
-details > summary:first-of-type {
-    list-style-position: outside;
+p:has(img) {
+    display: flex;
+    justify-content: center;
 }
