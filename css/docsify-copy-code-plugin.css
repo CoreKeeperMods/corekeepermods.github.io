@@ -1,0 +1,21 @@
+﻿:root {
+    --copycode-background: transparent;
+    --copy-code-color: #fff;
+    --copy-code-error-color: #c00;
+    --copy-code-success-color: #0c0;
+}
+
+.docsify-copy-code-button {
+    padding: .25em !important;
+}
+
+.docsify-copy-code-button.error > .error, .docsify-copy-code-button.success > .success{
+    right: .25em !important;
+}
+
+.docsify-copy-code-button > .error {
+    color: var(--copy-code-error-color);
+}
+.docsify-copy-code-button > .success{
+    color: var(--copy-code-success-color);
+}

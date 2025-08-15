@@ -17,7 +17,6 @@
   <!-- Plugin Styles -->
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
-  <link rel="stylesheet" href="https:///prismjs@v1.x/themes/prism.css" />
   <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
   <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
   <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
@@ -28,6 +27,8 @@
   <link rel="stylesheet" href="css/docsify-link-plugin.css"/>
   <link rel="stylesheet" href="css/docsify-fix-tips.css"/>
   <link rel="stylesheet" href="css/special-links.css"/>
+  <link rel="stylesheet" href="css/docsify-copy-code-plugin.css"/>
+  
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="style.css">
@@ -86,24 +87,18 @@
       
       //copy code config
       copyCode: {
-        buttonText: {
-          '/zh-cn/': '点击复制',
-          '/ru/': 'Скопировать в буфер обмена',
-          '/de-de/': 'Klicken Sie zum Kopieren',
-          '/es/': 'Haga clic para copiar',
-          '/': 'Copy to clipboard',
-        },
+        buttonText: '<i class="fa-regular fa-copy"></i>',
         errorText: {
           '/zh-cn/': '错误',
           '/ru/': 'ошибка',
           '/': 'Error',
         },
         successText: {
-          '/zh-cn/': '复制',
-          '/ru/': 'Скопировано',
-          '/de-de/': 'Kopiert',
-          '/es/': 'Copiado',
-          '/': 'Copied',
+          '/zh-cn/': '复制!',
+          '/ru/': 'Скопировано!',
+          '/de-de/': 'Kopiert!',
+          '/es/': 'Copiado!',
+          '/': 'Copied!',
         },
       },
       
@@ -183,6 +178,8 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="js/prism-csv.js"></script>
+  
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@ky_wong/docsify-version-plugin, brands, docsify, docsify-breadcrumb, docsify-copy-code, docsify-dark-switcher, docsify-fontawesome, docsify-pagination, docsify-progress, docsify-remote-markdown, docsify-scroll-to-top, docsify-select, docsify-tabs, docsify-themeable, docsify-toc, docsify-versioned-plugin, docsify-wikilink, font-awesome, fontawesome, navbar-fixed, prism-csharp, prism-javascript, prism-json, prism-json5, regular, search, solid, w3color, zoom-image}" />
+    <file url="PROJECT" libraries="{@ky_wong/docsify-version-plugin, brands, docsify, docsify-breadcrumb, docsify-copy-code, docsify-dark-switcher, docsify-fontawesome, docsify-pagination, docsify-progress, docsify-remote-markdown, docsify-scroll-to-top, docsify-select, docsify-tabs, docsify-themeable, docsify-toc, docsify-versioned-plugin, docsify-wikilink, font-awesome, fontawesome, navbar-fixed, prism-csharp, prism-csv, prism-javascript, prism-json, prism-json5, regular, search, solid, w3color, zoom-image}" />
   </component>
 </project>

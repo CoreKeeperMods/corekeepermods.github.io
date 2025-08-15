@@ -18,4 +18,5 @@
 - [<b>User Interface</b>](modules/user-interface/ "User Interface Submodule")
 - [<b>ModSDK Bug Fixes</b>](modsdk-bug-fixes/)
   - [Gradient Maps Not Working](modsdk-bug-fixes/grandient-maps-bug)
+  - [Localization Bug](modsdk-bug-fixes/localization-bug.md)
 - [Change Log](changelog.md)

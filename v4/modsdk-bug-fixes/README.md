@@ -4,5 +4,6 @@
 <div class="specialLink-container">
 
 - [Gradient Maps Not Working](modsdk-bug-fixes/grandient-maps-bug.md ':class=specialLink')
+- [Localization Bug](modsdk-bug-fixes/localization-bug.md ':class=specialLink')
 
 </div>

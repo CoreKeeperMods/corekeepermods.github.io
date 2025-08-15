@@ -51,3 +51,13 @@ p:has(img) {
     display: flex;
     justify-content: center;
 }
+
+.markdown-section pre[data-lang]::after {
+    right: unset;
+    left: .75em;
+    text-align: left;
+}
+
+.value {
+    
+}
