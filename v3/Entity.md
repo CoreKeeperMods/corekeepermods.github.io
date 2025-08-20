@@ -1,10 +1,10 @@
 ﻿# Entity Module
-Entity Module is a CoreLib submodule that helps adding specific entities. With mod SDK it's already possible to add custom entities, so this submodule is mostly a helper module.
+> Entity Module is a CoreLib submodule that helps adding specific entities. With mod SDK it's already possible to add custom entities, so this submodule is mostly a helper module.
 
-## Usage example:
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(EntityModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
-### Adding mod workbenches
+## Adding Mod Workbenches
 
 To allow player to obtain your custom items you will need to either add it to a mob drop loot pool, or use custom workbenches.
 
@@ -27,12 +27,12 @@ if (obj is WorkbenchDefinition workbenchDefinition)
 }
 ```
 
-### Modifying existing entities
+## Modifying Existing Entities
 You can modify existing entities (Including ones added by other mods) using a simple API.
 
 Create a static class with method like so:
 (This example adds an item to player crafting inventory)
-```csharp
+```cs
 [EntityModification]
 public static class MyModifications
 {
@@ -67,7 +67,7 @@ Your function arguments are:
 
 To register this add this to your `EarlyInit()` method:
 
-```csharp
+```cs
 // Register single type
 EntityModule.RegisterEntityModifications(typeof(MyModifications));
 
@@ -76,11 +76,11 @@ var modInfo = GetModInfo(this);
 EntityModule.RegisterEntityModifications(modInfo);
 ```
 
-## Modifying prefabs
+## Modifying Prefabs
 Modifying prefabs is not very different from modifying entities.
 
 Create a static class with method like so:
-```csharp
+```cs
 [PrefabModification]
 public static class MyModifications
 {
@@ -96,7 +96,7 @@ You will need to explicitly define what prefab type you want to target. Your pat
 
 To register this add this to your `EarlyInit()` method:
 
-```csharp
+```cs
 // Register single type
 EntityModule.RegisterPrefabModifications(typeof(MyModifications));
 

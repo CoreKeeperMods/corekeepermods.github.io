@@ -1,12 +1,7 @@
 ﻿# Localization Module
-Localization Module is a CoreLib submodule that allows to register new I2 localization strings.
+> Localization Module is a CoreLib submodule that allows to register new I2 localization strings.
 
-Please note that you can also add custom localization terms using a `.csv` file. Place it in `Localization` folder in root of your mod project.
-
-The file is tab separated. This is the header for the file:<br>
-`Key	Type	Desc	English	German	Japanese	Korean	Spanish	Chinese	(Simplified)	Thai`
-
-## Usage example:
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(LocalizationModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
 Now in your plugin `EarlyInit()` method write:
@@ -18,4 +13,12 @@ LocalizationModule.AddTerm("TermID", "English Translation", "Chinese Translation
 If you need to add more languages use verbose version:
 ```cs
 AddTerm("TermID", new Dictionary<string, string> { { "en", "English Translation" }, { "zh-CN", "Chinese Translation" }, /*...*/ });
+```
+
+## Core Keeper Localizing
+Core Keeper, by default, already allows custom localization terms using a `.csv` file. Place it in a `Localization` folder in root of your mod project.
+
+The file is tab separated. This is the header for the file:
+```csvtab
+Key	Type	Desc	English	German	French (France)	Portuguese (Brazil)	Italian (Italy)	Japanese	Korean	Russian	Spanish	Ukrainian	Chinese (Simplified)	Chinese (Traditional)	Thai
 ```

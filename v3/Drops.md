@@ -1,7 +1,7 @@
 ﻿# Loot Drop Tables Module
-Loot Drop Tables Module is a CoreLib submodule that allows to add, modify and remove loot drops.
+> Loot Drop Tables Module is a CoreLib submodule that allows to add, modify and remove loot drops.
 
-## Usage example:
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(DropTablesModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
 

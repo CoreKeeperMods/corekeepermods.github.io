@@ -1,12 +1,10 @@
-﻿# Specifics guide <!-- {docsify-ignore-all} -->
+﻿# Specifics Guide
 This guide has many sections dedicated to some specific kind of entity. What is explained here is only the difference from it's closest base
 
-## Animated block
+## Animated Block
 Doing animations here is as simple as replacing the texture used by sprite renderer at the correct time. Other than that setup is identical.
 
 This works by hot swapping Sprite texture sheet, without modifying the sprite. If each sheet in animation is setup identically, sprites from first frame apply correctly.
-
-<details><summary>Example</summary>
 
 ```cs
 public class AnimatedBlock : EntityMonoBehavior
@@ -27,14 +25,11 @@ public class AnimatedBlock : EntityMonoBehavior
     }
 }
 ```
-</details>
 
 ## Projectile
 Custom projectiles need to be derived from `Projectile`. Other than this it's identical to block setup.
 
-<details><summary>Example</summary>
-
-```csharp
+```cs
 public class MyProjectile : Projectile
 {
     public Transform> directionTransform;
@@ -90,16 +85,13 @@ public class MyProjectile : Projectile
     }
 }
 ```
-</details>
 
 ## Enemy
 Custom enemies work almost identically to blocks. You can adjust their loot by adding a custom loot table. Most of things you will want to edit in their behavior should be configurable using components and their settings.
 
 Currently defining where the enemy is spawned is not added by CoreLib, but it is planned. This is defined in `EnvironmentSpawnObjectsTable`, and editing it in your plugin should allow to set this.
 
-<details><summary>Example</summary>
-
-```csharp
+```cs
 public class MyCustomEnemy : EntityMonoBehavior
 {
     public void AE_AnticipationSound()
@@ -158,4 +150,3 @@ public class MyCustomEnemy : EntityMonoBehavior
 Note methods called `AE_AnticipationSound()`. These are Animation Events and are called by animator at times marked in it's dope sheet.
 
 This particular code is for a slime enemy.
-</details>

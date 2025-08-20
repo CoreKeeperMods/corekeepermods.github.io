@@ -1,12 +1,8 @@
 ﻿# Mod Resources Module
-Mod Resources Module is a CoreLib submodule that organises mod resources and facilitates loading of assets
+> Mod Resources Module is a CoreLib submodule that organises mod resources and facilitates loading of assets
 
-## How to use the module:
-This module does not require explicit loading.
-
-### Register your mod bundles
-
-In your plugin `EarlyInit()` method write:
+## Usage Example
+There is **NO NEED** to call `CoreLibMod.LoadModules()` for this submodule. In your plugin `EarlyInit()` method write:
 ```cs
 // Register bundles
 var modInfo = GetModInfo(this);
@@ -21,6 +17,6 @@ var clip = ResourcesModule.LoadAsset<AudioClip>("Assets/myamazingmod/Music/myEpi
 
 If you need an `AssetReference` to pass to some game method, you can do this:
 
-```csharp
+```cs
 var clipRef = "Assets/myamazingmod/Music/myEpicMusic".AsAddress<AudioClip>();
 ```

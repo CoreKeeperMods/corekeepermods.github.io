@@ -1,22 +1,18 @@
 ﻿# Equipment Slot Module
-Equipment Slot Module is a CoreLib submodule that allows to create custom equipment slots, which define how user should be using the item. Equipment slots drive every tool in Core Keeper.
+> Equipment Slot Module is a CoreLib submodule that allows to create custom equipment slots, which define how user should be using the item. Equipment slots drive every tool in Core Keeper.
 
-## Usage example
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(EquipmentSlotModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
-### Adding custom slot
+## Adding Custom Slot
 Then create a new class inheriting either from `EquipmentSlot` or `PlaceObjectSlot` classes. You can try to inherit other relevant classes. You also must implement an interface `IModEquipmentSlot`.
 
 You also need to create a *logic* class. It must implement `IEquipmentLogic` and optionally `IPlacementLogic` if your slot is related to placing things. It is a separate class because while `EquipmentSlot` is a client sided class, the logic must be present on all sides. Additionally, their lifecycles do not overlap in a meaningful way
 
 Please note that logic class MUST NEVER access data that outside of its context. The reason is that this code is being run as a part of a ECS system on both clients and server. The only exception can be static data such as configuration.
 
-
-<details><summary>Custom Slot Example</summary>
-
-Slot class:
-
-```csharp
+### Slot Class
+```cs
 public class WrenchEquipmentSlot : PlaceObjectSlot, IModEquipmentSlot
 {
     // This string is a unique id of object type we are creating. 
@@ -25,10 +21,7 @@ public class WrenchEquipmentSlot : PlaceObjectSlot, IModEquipmentSlot
 
     protected override EquipmentSlotType slotType => EquipmentModule.GetEquipmentSlotType<WrenchEquipmentSlot>();
 
-    public ObjectType GetSlotObjectType()
-    {
-        return EntityModule.GetObjectType(WrenchObjectType);
-    }
+    public ObjectType GetSlotObjectType() => EntityModule.GetObjectType(WrenchObjectType);
 
     // Please note that unlike in previous version we do NOT implement 'HandleInput' method. As it does not exist
 
@@ -46,10 +39,8 @@ public class WrenchEquipmentSlot : PlaceObjectSlot, IModEquipmentSlot
     }
 }
 ```
-
-Logic class:
-
-```csharp
+### Logic Class
+```cs
 public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
 {
     // These control some behaviour logic common to slots
@@ -74,21 +65,11 @@ public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
     // Included variables include the equipment aspect and some shared data.
     // From them you can access some components and other data, such as:
     // current tick, database bank, physics world, tile accessor, ecb, etc.
-    public bool Update(
-        EquipmentUpdateAspect equipmentAspect,
-        EquipmentUpdateSharedData sharedData,
-        LookupEquipmentUpdateData lookupData,
-        bool interactHeld,
-        bool secondInteractHeld)
+    public bool Update( EquipmentUpdateAspect equipmentAspect, EquipmentUpdateSharedData sharedData, LookupEquipmentUpdateData lookupData, bool interactHeld, bool secondInteractHeld)
     {
         // First we update the placement position
         var nativeList = new NativeList<PlacementHandler.EntityAndInfoFromPlacement>(Allocator.Temp);
-        PlacementHandler.UpdatePlaceablePosition(
-            equipmentAspect.equippedObjectCD.ValueRO.equipmentPrefab,
-            ref nativeList,
-            equipmentAspect,
-            sharedData,
-            lookupData);
+        PlacementHandler.UpdatePlaceablePosition( equipmentAspect.equippedObjectCD.ValueRO.equipmentPrefab, ref nativeList, equipmentAspect, sharedData, lookupData);
         nativeList.Dispose();
 
         // Check if user actually used the tool
@@ -120,17 +101,8 @@ public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
     // It allows you to configure that logic that determines whether the slot can be activated
     // Due to the way this slot logic works, we want to always return 'true'. 
     // And to do that, we return total tile count, which is width * height
-    public int CanPlaceObjectAtPosition(
-        Entity placementPrefab, 
-        int3 posToPlaceAt, 
-        int width, 
-        int height, 
-        NativeHashMap<int3, bool> tilesChecked,
-        ref NativeList<PlacementHandler.EntityAndInfoFromPlacement> diggableEntityAndInfos, 
-        in EquipmentUpdateAspect equipmentUpdateAspect, 
-        in EquipmentUpdateSharedData equipmentUpdateSharedData,
-        in LookupEquipmentUpdateData equipmentUpdateLookupData)
-    {   
+    public int CanPlaceObjectAtPosition( Entity placementPrefab, int3 posToPlaceAt, int width, int height, NativeHashMap<int3, bool> tilesChecked, ref NativeList<PlacementHandler.EntityAndInfoFromPlacement> diggableEntityAndInfos, in EquipmentUpdateAspect equipmentUpdateAspect, in EquipmentUpdateSharedData equipmentUpdateSharedData, in LookupEquipmentUpdateData equipmentUpdateLookupData)
+    {
         return width * height;
     }
 }
@@ -138,27 +110,21 @@ public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
 
 For more examples you can look at my recent `Secure attachment` mod. Portions of its code were used as demo code here.
 
-</details>
-
 Then you must register the slot. In mod's `EarlyInit()` function do this:
 
-```csharp
-EquipmentModule.RegisterEquipmentSlot<WrenchEquipmentSlot>(
-    WrenchEquipmentSlot.WrenchObjectType,
-    EquipmentModule.PLACEMENT_PREFAB,
-    new WrenchSlotLogic()
-);
+```cs
+EquipmentModule.RegisterEquipmentSlot<WrenchEquipmentSlot>(WrenchEquipmentSlot.WrenchObjectType, EquipmentModule.PLACEMENT_PREFAB, new WrenchSlotLogic());
 ```
 
-### Presets
+## Presets
 You can either use one of the preset prefabs, or create your own prefab in Unity Editor. Reference other slot prefabs to do so.
 
 Placement Prefab preset includes `PlacementHandler` and `PlaceIcon` (The blue square target), and is suitable if you are inheriting from `PlaceObjectSlot`.
 
-### Item with custom ObjectType
+## Item w/ Custom ObjectType
 To use the equipment slot you must also add an item, which uses a custom ObjectType. To do so you must use `ModObjectTypeAuthoring` component. `objectTypeId` you must provide in it is the same as you have in your slot class. (the `WrenchObjectType` property in the example code)
 
-Example:
+### Example
 
 ![Example item](./documentation/example%20item.png)<br>
 

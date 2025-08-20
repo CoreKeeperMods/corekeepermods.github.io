@@ -2,184 +2,192 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
 
-  <!-- Replace with your own title and description. -->
-  <title>Core Library Documentation</title>
-  <meta name="description" content="A Documentation Library Core Library (CoreLib).">
-  <link rel="icon" type="image/png" href="corelib-profile.png" />
-  
-  <!-- Theme-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="dark">
+    <!-- Replace with your own title and description. -->
+    <title>Core Library Documentation</title>
+    <meta name="description" content="A Documentation Library Core Library (CoreLib).">
+    <link rel="icon" type="image/png" href="corelib-profile.png"/>
 
-  <!-- Plugin Styles -->
-  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
-  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
-  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
-  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
-  <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
+    <!-- Theme-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
+          title="dark">
 
-  <link rel="stylesheet" href="css/docsify-dark-switcher-plugin.css"/>
-  <link rel="stylesheet" href="css/docsify-link-plugin.css"/>
-  <link rel="stylesheet" href="css/docsify-fix-tips.css"/>
-  <link rel="stylesheet" href="css/special-links.css"/>
-  <link rel="stylesheet" href="css/docsify-copy-code-plugin.css"/>
-  
+    <!-- Plugin Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css"/>
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css"/>
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css"/>
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
 
-  <!-- Custom Styling -->
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/docsify-dark-switcher-plugin.css"/>
+    <link rel="stylesheet" href="css/docsify-link-plugin.css"/>
+    <link rel="stylesheet" href="css/docsify-fix-tips.css"/>
+    <link rel="stylesheet" href="css/special-links.css"/>
+    <link rel="stylesheet" href="css/docsify-copy-code-plugin.css"/>
+
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav></nav>
-  <div id="app">Loading Mod Info...</div>
+<nav></nav>
+<div id="app">Loading Mod Info...</div>
 
-  <script>
+<script>
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    let versionParam = params.get("version");
+    console.log(versionParam);
+    
     let versions = [
-      { folder: 'v3/', label: 'v3.x', default: true },
-      { folder: 'v4/', label: 'v4.x', default: false },
+        {folder: 'v3/', label: 'v3.x', default: true},
+        {folder: 'v4/', label: 'v4.x', default: false},
     ];
     let basePath = sessionStorage.getItem("basePath");
+    
     if (basePath == null) {
-      let defaultVersion = versions.find((v) => v.default).folder;
-      sessionStorage.setItem("basePath", defaultVersion);
+        console.log("Here");
+        let defaultVersion = versions.find((v) => versionParam != null ? v.folder === versionParam : v.default).folder;
+        sessionStorage.setItem("basePath", defaultVersion);
     }
     const versionFolder = sessionStorage.getItem("basePath");
-
     window.$docsify = {
-      name: 'Core Library',
-      auto2top: true,
-      loadSidebar: true,
-      loadNavbar: false,
-      maxLevel: 0,
-      subMaxLevel: 0,
-      repo: 'https://github.com/CoreKeeperMods/CoreLib',
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md',
-      },
-      
-      // Search Plugin Configuration
-      search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: 'Type to search',
-        noData: 'No Results',
-        // Headline depth, 1 - 6
-        depth: 2,
-        hideOtherSidebarContent: true,
-        namespace: 'docs-' + versionFolder // Set a unique namespace for each version
-      },
-      basePath: sessionStorage.getItem("basePath"),
-      versions: versions,
-      versionSelectorLabel: 'Version',
-
-      // pagination config
-      pagination: {
-        previousText: 'Previous',
-        nextText: 'Next',
-        crossChapter: true,
-        crossChapterText: true,
-      },
-      
-      //copy code config
-      copyCode: {
-        buttonText: '<i class="fa-regular fa-copy"></i>',
-        errorText: {
-          '/zh-cn/': '错误',
-          '/ru/': 'ошибка',
-          '/': 'Error',
-        },
-        successText: {
-          '/zh-cn/': '复制!',
-          '/ru/': 'Скопировано!',
-          '/de-de/': 'Kopiert!',
-          '/es/': 'Copiado!',
-          '/': 'Copied!',
-        },
-      },
-      
-      //tabs config
-      tabs: {
-        persist: true,
-        sync: true,
-        theme: 'classic',
-        tabComments: true,
-        tabHeadings: false
-      },
-      
-      //table of contents
-      toc: {
-        title: 'Table of Contents'
-      },
-
-      //remote markdown
-      remoteMarkdown: {
-        tag: 'changelogURL'
-      },
-
-      //scroll to top
-      scrollToTop: {
-        auto: true,
-        text: '',
-        icon: 'fa fa-arrow-up',
-        right: 15,
-        bottom: 15,
-        offset: 500
-      },
-
-      //link headers
-      linkHeaders: {
-        class: 'fa fa-link fa-2xs'
-      },
-
-      // select options
-      select: {
-        useSelectHeadingComment: true,
-        selected: {
-          "version-select": "Specific Version",
-        },
-      },
-      
-      //breadcrumbs
-      breadcrumb: {
-        size: 'normal',
+        name: 'Core Library',
+        auto2top: true,
+        loadSidebar: true,
+        loadNavbar: false,
+        maxLevel: 0,
+        subMaxLevel: 0,
+        repo: 'https://github.com/CoreKeeperMods/CoreLib',
         alias: {
-          'modsdk-bug-fixes': 'ModSDK Bug Fixes',
-          'modules': 'Main Module',
-        }
-      },
+            '/.*/_sidebar.md': '/_sidebar.md',
+        },
+        basePath: sessionStorage.getItem("basePath"),
+        versions: versions,
+        versionSelectorLabel: 'Version',
+        
+        // Search Plugin Configuration
+        search: {
+            maxAge: 86400000,
+            paths: 'auto',
+            placeholder: 'Type to search',
+            noData: 'No Results',
+            // Headline depth, 1 - 6
+            depth: 2,
+            hideOtherSidebarContent: true,
+            namespace: 'docs-' + versionFolder // Set a unique namespace for each version
+        },
+        
+        // pagination config
+        pagination: {
+            previousText: 'Previous',
+            nextText: 'Next',
+            crossChapter: true,
+            crossChapterText: true,
+        },
+
+        //copy code config
+        copyCode: {
+            buttonText: '<i class="fa-regular fa-copy"></i>',
+            errorText: {
+                '/zh-cn/': '错误',
+                '/ru/': 'ошибка',
+                '/': 'Error',
+            },
+            successText: {
+                '/zh-cn/': '复制!',
+                '/ru/': 'Скопировано!',
+                '/de-de/': 'Kopiert!',
+                '/es/': 'Copiado!',
+                '/': 'Copied!',
+            },
+        },
+
+        //tabs config
+        tabs: {
+            persist: true,
+            sync: true,
+            theme: 'classic',
+            tabComments: true,
+            tabHeadings: false
+        },
+
+        //table of contents
+        toc: {
+            title: 'Table of Contents'
+        },
+
+        //remote markdown
+        remoteMarkdown: {
+            tag: 'changelogURL'
+        },
+
+        //scroll to top
+        scrollToTop: {
+            auto: true,
+            text: '',
+            icon: 'fa fa-arrow-up',
+            right: 15,
+            bottom: 15,
+            offset: 500
+        },
+
+        //link headers
+        linkHeaders: {
+            class: 'fa fa-link fa-2xs'
+        },
+
+        // select options
+        select: {
+            useSelectHeadingComment: true,
+            selected: {
+                "version-select": "Specific Version",
+            },
+        },
+
+        //breadcrumbs
+        breadcrumb: {
+            size: 'normal',
+            alias: {
+                'modsdk-bug-fixes': 'ModSDK Bug Fixes',
+                'modules': 'Main Module',
+            }
+        },
     };
-  </script>
+</script>
 
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
-  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
-  <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
+<script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
 
-  <script src="js/docsify-toc-plugin.js"></script>
-  <script src="js/docsify-version-plugin.js"></script>
-  <script src="js/docsify-scroll-to-top-plugin.js"></script>
-  <script src="js/docsify-dark-switcher-plugin.js"></script>
-  <script src="js/docsify-link-headers-plugin.js"></script>
-  <script src="js/docsify-fix-tips.js"></script>
-  <script src="js/docsify-breadcrumb-plugin.js" type="module"></script>
+<script src="js/docsify-toc-plugin.js"></script>
+<script src="js/docsify-version-plugin.js"></script>
+<script src="js/docsify-scroll-to-top-plugin.js"></script>
+<script src="js/docsify-dark-switcher-plugin.js"></script>
+<script src="js/docsify-link-headers-plugin.js"></script>
+<script src="js/docsify-fix-tips.js"></script>
+<script src="js/docsify-breadcrumb-plugin.js" type="module"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-  <script src="js/prism-csv.js"></script>
-  
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+<script src="js/prism-csv.js"></script>
+
 
 </body>
 </html>

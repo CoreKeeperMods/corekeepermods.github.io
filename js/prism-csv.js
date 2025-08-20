@@ -1,6 +1,6 @@
 ﻿// https://tools.ietf.org/html/rfc4180
 
-Prism.languages.csv = {
+Prism.languages.csvtab = {
     'punctuation': /\s{4}/,
     'value': /[\s]{4}|[^\r\n"]+|"(?:[^"]|"")*"(?!")/,
 };
@@ -9,7 +9,7 @@ const csvColors = ['#FFA000', '#D32F2F', '#CE93D8', '#00897B', '#BCAAA4', '#8BC3
 
 var fixcsv = function (hook) {
     hook.doneEach(function () {
-        let csvCode = document.querySelectorAll('pre[data-lang="csv"]');
+        let csvCode = document.querySelectorAll('pre[data-lang="csvtab"]');
         csvCode.forEach(function (code) {
             let elements = code.getElementsByClassName('token value');
             for (let i = 0; i < elements.length; i++) {

@@ -1,30 +1,30 @@
 ﻿# CoreLib
-A modding library for Core Keeper. Provides features that makes modding Core Keeper easier.
+![CoreLib](../corelib-bg.png)
+> A modding library for Core Keeper. Provides features that makes modding Core Keeper easier.
 
-**WARNING!** Version 3.0.0 contains breaking changes.
+!> **WARNING!** Version 3.0.0 contains breaking changes.
 
-# List of features
+## List of Features
 - Custom items, blocks, enemies, NPC, etc.
 - Easier access to Rewired input system, localization
 - Custom chat commands
+- And much more!
 
-And much more!
-
-# Developing with CoreLib
+## Developing w/ CoreLib
 To develop with CoreLib, you will need to install CoreLib package into your mod SDK project.
 
 ## Preparation
 CoreLib packages use git packages, this means you **MUST** install [git](https://git-scm.com/download/win) and add it to your PATH environment variable.
 
-Note:
-- After installing git make sure to close Unity and Unity hub completely!
-- Unity Hub does not close when you close the window and needs to be exited from the Windows Notification Area
+> Note:
+> - After installing git make sure to close Unity and Unity hub completely!
+> - Unity Hub does not close when you close the window and needs to be exited from the Windows Notification Area
 
 ## Installation
 Navigate to your mod SDK project root, and open `Packages` folder. And edit `manifest.json` file with your favorite text editor.
 
 Add following lines at the beginning:
-```
+```json
 "ck.modding.corelib": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/CoreLibPackage#main",
 "ck.modding.sdk-extensions": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/SDKExtensions#main",
 "ck.modding.markdig": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/Markdig#main",
@@ -50,17 +50,14 @@ With Core Lib also comes a package called `SDK Extensions`. This package adds a 
 
 **Note:** some of these features require manual changes to mod SDK project. Reference [my fork](https://github.com/kremnev8/CoreKeeperModSDK) of mod SDK project to see what changes you need.
 
-# Documentation
-Each submodule contains a markdown file with documentation.
-
-# Mod.io Links:
-- [Audio Submodule](https://mod.io/g/corekeeper/m/corelibaudio)
-- [Commands Submodule](https://mod.io/g/corekeeper/m/corelibcommands)
-- [Drops Submodule](https://mod.io/g/corekeeper/m/corelibdrops)
-- [Entity Submodule](https://mod.io/g/corekeeper/m/corelibentity)
-- [Equipment Submodule](https://mod.io/g/corekeeper/m/corelibequipment)
-- [Localization Submodule](https://mod.io/g/corekeeper/m/coreliblocalization)
-- [Resources Submodule](https://mod.io/g/corekeeper/m/corelibresources)
-- [RewiredExtension Submodule](https://mod.io/g/corekeeper/m/corelibrewiredextension)
-- [Tilesets Submodule](https://mod.io/g/corekeeper/m/corelibtilesets)
-- [User Interface Submodule](https://mod.io/g/corekeeper/m/corelib-userinterface)
+## Mod.io Links:
+- [Audio Submodule](https://mod.io/g/corekeeper/m/corelibaudio ':class=specialLink')
+- [Commands Submodule](https://mod.io/g/corekeeper/m/corelibcommands ':class=specialLink')
+- [Drops Submodule](https://mod.io/g/corekeeper/m/corelibdrops ':class=specialLink')
+- [Entity Submodule](https://mod.io/g/corekeeper/m/corelibentity ':class=specialLink')
+- [Equipment Submodule](https://mod.io/g/corekeeper/m/corelibequipment ':class=specialLink')
+- [Localization Submodule](https://mod.io/g/corekeeper/m/coreliblocalization ':class=specialLink')
+- [Resources Submodule](https://mod.io/g/corekeeper/m/corelibresources ':class=specialLink')
+- [RewiredExtension Submodule](https://mod.io/g/corekeeper/m/corelibrewiredextension ':class=specialLink')
+- [Tilesets Submodule](https://mod.io/g/corekeeper/m/corelibtilesets ':class=specialLink')
+- [User Interface Submodule](https://mod.io/g/corekeeper/m/corelib-userinterface ':class=specialLink')

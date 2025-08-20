@@ -1,13 +1,13 @@
-- [CoreLib](/)
-- <b>Submodules</b>
+- [CoreLib](/ "Core Library")
+  - <b>Submodules</b>
   - [CoreLib.Audio](Audio.md)
   - [CoreLib.Commands](Commands.md)
   - [CoreLib.Drops](Drops.md)
   - [CoreLib.Entity](Entity.md)
-      - <b>Entity Guides</b>
-        - [Blocks](Guides/Blocks.md)
-        - [Items](Guides/Items.md)
-        - [Specifics](Guides/Specifics.md)
+    - <b>Entity Guides</b>
+    - [Items](Items.md)
+    - [Blocks](Blocks.md)
+    - [Specifics](Specifics.md)
   - [CoreLib.Equipment](Equipment.md)
   - [CoreLib.Localization](Localization.md)
   - [CoreLib.Resources](Resources.md)

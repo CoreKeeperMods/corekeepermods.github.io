@@ -1,6 +1,6 @@
 ﻿# Localization Bug
 
-!> Localizaiton.csv files are the root of setting up the text of the game in different languages.
+> Localizaiton.csv files are the root of setting up the text of the game in different languages.
 Unfortunately, there is a huge error occuring for mods.
 
 <!-- tabs:start -->
@@ -10,13 +10,13 @@ Unfortunately, there is a huge error occuring for mods.
 The bug surprisingly stems from the shorthand version fo the localization.csv files.
 The game will generate its own csv in shorthand as well if this is the first mod to load.
 
-```csv
+```csvtab
 Key	Type	Desc	English	German	Japanese	Korean	Spanish	Chinese (Simplified)	Thai
 ```
 
 Then, when another mod uses a longform csv it will break the generated localization.csv file by just adding on to the new languages to the end of the shorthand version.
 
-```csv
+```csvtab
 Key	Type	Desc	English	German	Japanese	Korean	Spanish	Chinese (Simplified)	Thai	French (France)	Portuguese (Brazil)	Italian (Italy)	Russian	Ukrainian	Chinese (Traditional)
 ```
 
@@ -28,7 +28,7 @@ It also makes it so that all languages are out of order from what they are suppo
 
 ?> There is no actual fix for this right now as the developers would have to fix this, but there is a workaround. Always use the longform version for the localization.csv.
 
-```csv
+```csvtab
 Key	Type	Desc	English	German	French (France)	Portuguese (Brazil)	Italian (Italy)	Japanese	Korean	Russian	Spanish	Ukrainian	Chinese (Simplified)	Chinese (Traditional)	Thai
 ```
 

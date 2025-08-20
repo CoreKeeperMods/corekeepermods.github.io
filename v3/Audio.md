@@ -1,12 +1,12 @@
 ﻿# Audio Module
-Audio Module is a CoreLib submodule that allows to add custom music and sound effects
+> Audio Module is a CoreLib submodule that allows to add custom music and sound effects
 
-## Usage example:
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(AudioModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
 Now in your Unity project import needed assets into your mod folder. Next ensure that your mod bundles have been registered using `ResourcesModule`.
 
-### Add custom music
+## Add Custom Music
 
 In your mod `EarlyInit()` method write:
 ```cs
@@ -22,7 +22,7 @@ To play the music you can use `AudioManager` class methods as usual.
 Manager.music.SetNewMusicPlaylist(roster);
 ```
 
-### Add custom sound effects
+## Add Custom Sound Effects
 
 ```cs
 // After adding the sound effect make sure to remember the SfxID

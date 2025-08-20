@@ -13,8 +13,6 @@
 <!--- tabs:end --->
 
 ## Submodules
-<div class="specialLink-container">
-
 - [<b>Audio Submodule</b>](modules/audio/ ':class=specialLink')
 - [<b>Command Submodule</b>](modules/command/ ':class=specialLink')
 - [<b>Entity Submodule</b>](modules/entity/ ':class=specialLink')
@@ -25,5 +23,3 @@
 - [<b>Rewired Extension Submodule</b>](modules/rewired-extension/ ':class=specialLink')
 - [<b>Tileset Submodule</b>](modules/tileset/ ':class=specialLink')
 - [<b>User Interface Submodule</b>](modules/user-interface/ ':class=specialLink')
-
-</div>

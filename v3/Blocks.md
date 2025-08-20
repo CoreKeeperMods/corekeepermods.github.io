@@ -1,15 +1,15 @@
-﻿# Making entities with custom visuals <!-- {docsify-ignore-all} -->
+﻿# Making Entities w/ Custom Visuals
 Entities such as blocks, enemies, projectiles, etc need a visual part to function. This guide explains how to do so on a example of a block. Process is similar for other kinds of entities
 
 Main difference between an item and a block in Core Keeper is the custom visual prefab. This prefab is what you see in the world. You must create and assign it, for entity to be spawnable and placeable.
 
-## How to make visual prefab
+## How to Make Visual Prefab
 Visual prefab needs to contain a few things:
 - A UNIQUE component class deriving EntityMonoBehavior
 - All sprites to be drawn
 - Interaction logic handler (Optional)
 
-### EntityMonoBehavior derived class
+## EntityMonoBehavior Derived Class
 
 Your component MUST derive from `EntityMonoBehavior`.
 
@@ -27,7 +27,7 @@ public class MyCustomBlock : EntityMonoBehavior
 }
 ```
 
-### Creating prefab
+## Creating Prefab
 Typical prefab structure look like this. You can find how something is done by checking vanilla prefabs.
 
 ![Visual Prefab Structure In Unity Editor](../documentation/visual-prefab.png)<br>
@@ -40,7 +40,7 @@ Also if your block needs to be interacted with, ensure correct setup of Interact
 
 ![Interactable component In Unity Editor](../documentation/prefab-interactible.png)<br>
 
-## Adding custom block
+## Adding Custom Block
 After creating your prefab, you need to hook it into `Prefab` property on `EntityMonoBehaviorData` and add the entity as usual.
 
-![Hooking visual prefab](../documentation/visual-prefab-hooked.png)<br>
+![Hooking visual prefab](documentation/visual-prefab-hooked.png)<br>

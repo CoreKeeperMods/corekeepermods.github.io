@@ -1,9 +1,9 @@
 ﻿# Commands Module
-Commands Module is a CoreLib submodule that allows to add new Chat Commands.
+> Commands Module is a CoreLib submodule that allows to add new Chat Commands.
 
 This submodule also enables the use of Quantum console if you prefer it. Use `Del` key on your keyboard to open it. Use `chat` command to use chat commands from it. For example: `chat give iron bar 5`
 
-## Usage example:
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(CommandsModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
 To make a command create a new class implementing `IClientCommandHandler` interface:

@@ -1,5 +1,4 @@
 ﻿# Core Library <small>{{versionLabel}}</small>
-
 !> CoreLib 4.x is currently in development, and is not available at this time. Please go back to 3.x if you are looking for the latest CoreLib documentation.
 If want to see what we have in store for CoreLib 4.x, feel free to look around!
 
@@ -19,8 +18,4 @@ If want to see what we have in store for CoreLib 4.x, feel free to look around!
 - And much more!
 
 ## Mod.io Link
-<div class="specialLink-container">
-
 - [CoreLib](https://mod.io/g/corekeeper/m/core-lib ':class=specialLink')
-
-</div>

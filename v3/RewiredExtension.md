@@ -1,7 +1,7 @@
 ﻿# Rewired Extension Module
-Rewired Extension Module is a CoreLib submodule that allows to register new Rewired key binds. Users will be able to rebind them to what they want.
+> Rewired Extension Module is a CoreLib submodule that allows to register new Rewired key binds. Users will be able to rebind them to what they want.
 
-## Usage example:
+## Usage Example
 Make sure to call `CoreLibMod.LoadModules(typeof(RewiredExtensionModule));` to in your mod `EarlyInit()` function, before using the module. This will load the submodule.
 
 Now in your plugin `EarlyInit()` method write:

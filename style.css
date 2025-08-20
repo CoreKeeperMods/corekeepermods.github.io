@@ -5,6 +5,10 @@
     --docsifyselect-menu-background: var(--base-background-color);
     --docsifyselect-menu-border-color: var(--text-color-base);
     --docsifyselect-menu-line-height: 22px;
+    --sidebar-nav-link-margin: 0;
+    --sidebar-nav-pagelink-background: unset;
+    --sidebar-nav-pagelink-background--active: unset;
+    --sidebar-nav-pagelink-background--loaded: unset;
 }
 
 .docsify-dark-mode .docsify-select-menu {
@@ -56,8 +60,4 @@ p:has(img) {
     right: unset;
     left: .75em;
     text-align: left;
-}
-
-.value {
-    
 }
