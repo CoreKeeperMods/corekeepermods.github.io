@@ -2,7 +2,7 @@
 !> CoreLib 4.x is currently in development, and is not available at this time. Please go back to 3.x if you are looking for the latest CoreLib documentation.
 If want to see what we have in store for CoreLib 4.x, feel free to look around!
 
-![CoreLib](../corelib-bg.png)
+![CoreLib](pics/corelib-bg.png)
 
 > A modding library for Core Keeper that provides features that makes modding Core Keeper easier.
 

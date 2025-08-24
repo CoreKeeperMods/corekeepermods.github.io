@@ -56,6 +56,10 @@ p:has(img) {
     justify-content: center;
 }
 
+img {
+    object-fit: scale-down;
+}
+
 .markdown-section pre[data-lang]::after {
     right: unset;
     left: .75em;

@@ -10,7 +10,7 @@ The Core Library Package uses git packages, this means you **MUST** install [git
 ?> After installing git make sure to close `Unity` and `Unity Hub` ***COMPLETELY!***
 Exit `Unity Hub` from the Windows Notification Area. ***Does not close on its own.***
 
-![Notifications Area](../pics/desktop-notifications-area.png)
+![Notifications Area](pics/desktop-notifications-area.png)
 
 ## Installation
 
@@ -68,4 +68,4 @@ Main Version `#main`:
 ## Done
 After Unity is done installing you can now open your project, and you will have the CoreLib Package ready to be used.
 
-![Unity Package Directory](../pics/package-directory.png)
+![Unity Package Directory](pics/package-directory.png)

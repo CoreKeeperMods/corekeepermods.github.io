@@ -1,14 +1,27 @@
 ﻿# Mod Builder Settings
 
+![CoreLib Mod Builder Settings](pics/mod-builder-settings-1.png ':size=45%')&nbsp;
+![CoreLib Mod Builder Settings](pics/mod-builder-settings-2.png ':size=45%')
+
 ## Dependencies Dropdown
 
-> A dropdown has been added to the `Mod Builder Settings` asset for dependencies. You can now search and select via a combination of a string and dropdown.
+> A dropdown has been added to the Dependencies.
+> You can now search and select all `ModBuilderSettings` in your project via a combination of a text field and dropdown.
 
-![CoreLib Dependencies](../pics/corelib-dependencies.png)
+## Build Burst Boolean
 
-## Sync Assembly Definition File
+> A boolean has been added to allow for building Burst Files **(.dll)**.
+> If the boolean doesn't exist, a `Tutorial Link` and `Open Script` Button will appear.
+> Use these and follow the instructions in the tutorial.
 
-> The `Assembly Definition` asset **(.asmdef)** are able to be synced via a button on the `Mod Builder Settings` asset. It uses the `Mod Path` string to find the asset and update it with the dependencies automatically.
-**Ignores any Unity or ModSDK assemblies.*
+- [Burst Files](editor-utilities/burst-files.md ':class=specialLink')
 
-![CoreLib Meta Data](../pics/corelib-metadata.png)
+## Sync Assembly Definition File [Button]
+
+> The `Assembly Definition` asset **(.asmdef)** can be synced via a button.
+> It uses the `Mod Path` string and the `Metadata.Name` to find the asset and update it with the dependencies automatically.
+> **Ignores any Unity or ModSDK assemblies.*
+
+## Open Assembly Definition File [Button]
+
+> A button has been added to open the associated `Assembly Definition` asset file **(.asmdef)** in Unity.
