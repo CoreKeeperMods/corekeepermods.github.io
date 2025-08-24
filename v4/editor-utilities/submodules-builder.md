@@ -2,6 +2,8 @@
 
 ![Submodules Builder](pics/submodules-builder.png)
 
+> Asset Menu: `Create > CoreLib > Submodules Builder`
+
 ## Properties
 
 <!-- tabs: start -->

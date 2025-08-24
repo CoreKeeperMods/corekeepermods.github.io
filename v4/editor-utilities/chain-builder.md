@@ -2,6 +2,8 @@
 
 ![Submodules Builder](pics/chain-builder.png)
 
+> Asset Menu: `Create > CoreLib > Chain Builder`
+
 ## Properties
 
 <!-- tabs: start -->
