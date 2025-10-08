@@ -30,7 +30,7 @@ public class MyCustomBlock : EntityMonoBehavior
 ## Creating Prefab
 Typical prefab structure look like this. You can find how something is done by checking vanilla prefabs.
 
-![Visual Prefab Structure In Unity Editor](../documentation/visual-prefab.png)<br>
+![Visual Prefab Structure In Unity Editor](documentation/visual-prefab.png)<br>
 
 On the root, there must be a EntityMonoBehavior deriving component.
 
@@ -38,7 +38,7 @@ After setting up the prefab make sure that every Sprite Renderer has a `RuntimeM
 
 Also if your block needs to be interacted with, ensure correct setup of Interactable component:
 
-![Interactable component In Unity Editor](../documentation/prefab-interactible.png)<br>
+![Interactable component In Unity Editor](documentation/prefab-interactible.png)<br>
 
 ## Adding Custom Block
 After creating your prefab, you need to hook it into `Prefab` property on `EntityMonoBehaviorData` and add the entity as usual.
