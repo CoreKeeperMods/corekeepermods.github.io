@@ -3,3 +3,4 @@
 
 - [Gradient Maps Not Working](modsdk-bug-fixes/grandient-maps-bug.md ':class=specialLink')
 - [Localization Bug](modsdk-bug-fixes/localization-bug.md ':class=specialLink')
+- [API Config Register Bug](modsdk-bug-fixes/api-config-register-bug.md ':class=specialLink')
