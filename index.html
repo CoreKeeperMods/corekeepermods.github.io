@@ -45,16 +45,19 @@
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     let versionParam = params.get("version");
+    console.log(versionParam);
     
     let versions = [
-        {folder: 'v3/', label: 'v3.x', default: true},
-        {folder: 'v4/', label: 'v4.x', default: false},
+        {folder: 'v3/', label: 'v3.x', name: '3', default: true},
+        {folder: 'v4/', label: 'v4.x', name: '4', default: false},
     ];
     let basePath = sessionStorage.getItem("basePath");
     
+    console.log(basePath);
+    
     if (basePath == null) {
         console.log("Here");
-        let defaultVersion = versions.find((v) => versionParam != null ? v.folder === versionParam : v.default).folder;
+        let defaultVersion = versions.find((v) => versionParam != null ? v.name === versionParam : v.default).folder;
         sessionStorage.setItem("basePath", defaultVersion);
     }
     const versionFolder = sessionStorage.getItem("basePath");
