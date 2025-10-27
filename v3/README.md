@@ -1,4 +1,4 @@
-﻿# CoreLib
+﻿# CoreLib <small>{{versionLabel}}</small>
 ![CoreLib](documentation/corelib-bg.png)
 > A modding library for Core Keeper. Provides features that makes modding Core Keeper easier.
 

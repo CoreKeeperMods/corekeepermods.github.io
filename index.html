@@ -30,21 +30,21 @@
     <link rel="stylesheet" href="css/docsify-fix-tips.css"/>
     <link rel="stylesheet" href="css/special-links.css"/>
     <link rel="stylesheet" href="css/docsify-copy-code-plugin.css"/>
-
-
+    
     <!-- Custom Styling -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 <nav></nav>
-<div id="app">Loading Mod Info...</div>
+<div id="app">
+    <h1>Loading CoreLib...</h1>
+</div>
 
 <script>
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     let versionParam = params.get("version");
-    console.log(versionParam);
     
     let versions = [
         {folder: 'v3/', label: 'v3.x', default: true},
@@ -60,6 +60,8 @@
     const versionFolder = sessionStorage.getItem("basePath");
     window.$docsify = {
         name: 'Core Library',
+        vueGlobalOptions: {
+        },
         auto2top: true,
         loadSidebar: true,
         loadNavbar: false,
@@ -164,6 +166,7 @@
 </script>
 
 <!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>

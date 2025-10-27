@@ -4,14 +4,82 @@
 
 ## Usage
 
-## Classes
+## Namespaces
 
-<!--- tabs:start --->
+### CoreLib
+<!-- tabs: start -->
+<!-- tab: Class -->
+| Classes                                     | Description |
+|---------------------------------------------|-------------|
+| [BaseSubmodule](/modules/Class?title=title) |             |
+| CoreLibMod                                  |             |
+| SubmoduleHandler                            |             |
+<!-- tab: Structure -->
+| Structures  | Description |
+|-------------|-------------|
+| GameVersion |             |
+<!-- tabs: end -->
 
-<!--- tab:All Classes --->
+### CoreLib.Data
+<!-- tabs: start -->
+<!-- tab: Class -->
+| Classes          | Description |
+|------------------|-------------|
+| IdBind           |             |
+| IdBindConfigFile |             |
+<!-- tabs: end -->
 
+### CoreLib.Data.Configuration
+<!-- tabs: start -->
+<!-- tab: Class -->
+| Classes                 | Description |
+|-------------------------|-------------|
+| AcceptableValueBase     |             |
+| AcceptableValueList     |             |
+| AcceptableValueRange    |             |
+| ConfigDefinition        |             |
+| ConfigDescription       |             |
+| ConfigEntry             |             |
+| ConfigEntryBase         |             |
+| ConfigFile              |             |
+| ConfigScope             |             |
+| SettingChangedEventArgs |             |
+| TomlTypeConverter       |             |
+| TypeConverter           |             |
 
-<!--- tabs:end --->
+<!-- tab: Enum -->
+| Enums             | Description |
+|-------------------|-------------|
+| ConfigAccessLevel |             |
+
+<!-- tabs: end -->
+
+### CoreLib.Util
+<!-- tabs: start -->
+<!-- tab: Class -->
+| Classes      | Description |
+|--------------|-------------|
+| GameManagers |             |
+| Logger       |             |
+| Players      |             |
+| State        |             |
+
+<!-- tabs: end -->
+
+### CoreLib.Util.Extensions
+<!-- tabs: start -->
+<!-- tab: Class -->
+| Classes                  | Description |
+|--------------------------|-------------|
+| CollectionUtils          |             |
+| GeneralExtensions        |             |
+| ModExtensions            |             |
+| ObjectDataExtensions     |             |
+| ReflectionUtil           |             |
+| TopologicalSortExtension |             |
+
+<!-- tabs: end -->
+
 
 ## Submodules
 - [<b>Audio Submodule</b>](modules/audio/ ':class=specialLink')
