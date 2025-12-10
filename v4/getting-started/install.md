@@ -1,7 +1,4 @@
 ﻿# How to Install
-
-> To develop with CoreLib, you will need to install the Core Library Package into your mod SDK project.
-
 ## Preparation
 The Core Library Package uses git packages, this means you **MUST** install [git](https://git-scm.com/download/win) and add it to your PATH environment variable.
 
