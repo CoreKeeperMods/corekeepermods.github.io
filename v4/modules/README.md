@@ -21,6 +21,28 @@
 - `CoreLib.Submodule.Tileset`
 - `CoreLib.Submodule.UserInterface`
 
+## Public Methods
+
+- [`LoadSubmodule`](#LoadSubmodule)
+
+### `LoadSubmodule`
+
+<!-- tabs:start -->
+<!-- tab: Parameters -->
+- **`moduleTypes`** (`Type[]`) [**_params_**]:
+	- Description: The List of submodule types to load.
+<!-- tab: Examples -->
+#### Single Submodule
+```csharp
+CoreLibMod.LoadSubmodule(typeof(AudioModule));
+```
+
+#### Multiple Submodules
+```csharp
+CoreLibMod.LoadSubmodule(typeof(AudioModule), typeof(CommandModule));
+```
+<!-- tabs:end -->
+
 ## Submodules
 - [<b>Audio Submodule</b>](modules/audio/ ':class=specialLink')
 - [<b>Command Submodule</b>](modules/command/ ':class=specialLink')

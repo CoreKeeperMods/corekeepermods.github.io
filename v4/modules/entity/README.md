@@ -8,7 +8,7 @@ To load this submodule, add the following code to your `IMod` class within the `
 
 <!-- tab:Copy Code -->
 ```csharp
-CoreLibMod.LoadSubmodule(typeof(EntityModule);
+CoreLibMod.LoadSubmodule(typeof(EntityModule));
 ```
 
 <!-- tab:*MyMod.cs* Example -->
@@ -25,7 +25,7 @@ namespace MyNamespace
 		public void EarlyInit()
 		{
             //Before the submodule is loaded
-			CoreLibMod.LoadSubmodule(typeof(EntityModule);
+			CoreLibMod.LoadSubmodule(typeof(EntityModule));
             //The submodule is now loaded
 		}
 		

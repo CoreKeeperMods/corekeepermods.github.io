@@ -13,7 +13,7 @@ To load this submodule, add the following code to your `IMod` class within the `
 
 <!-- tab:Copy Code -->
 ```csharp
-CoreLibMod.LoadSubmodule(typeof(UserInterfaceModule);
+CoreLibMod.LoadSubmodule(typeof(UserInterfaceModule));
 ```
 
 <!-- tab:*MyMod.cs* Example -->
@@ -30,7 +30,7 @@ namespace MyNamespace
 		public void EarlyInit()
 		{
             //Before the submodule is loaded
-			CoreLibMod.LoadSubmodule(typeof(UserInterfaceModule);
+			CoreLibMod.LoadSubmodule(typeof(UserInterfaceModule));
             //The submodule is now loaded
 		}
 		

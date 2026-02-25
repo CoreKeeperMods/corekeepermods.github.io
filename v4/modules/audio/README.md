@@ -12,7 +12,7 @@ To load this submodule, add the following code to your `IMod` class within the `
 
 <!-- tab:Copy Code -->
 ```csharp
-CoreLibMod.LoadSubmodule(typeof(AudioModule);
+CoreLibMod.LoadSubmodule(typeof(AudioModule));
 ```
 
 <!-- tab:*MyMod.cs* Example -->
@@ -29,7 +29,7 @@ namespace MyNamespace
 		public void EarlyInit()
 		{
             //Before the submodule is loaded
-			CoreLibMod.LoadSubmodule(typeof(AudioModule);
+			CoreLibMod.LoadSubmodule(typeof(AudioModule));
             //The submodule is now loaded
 		}
 		
@@ -68,7 +68,7 @@ These methods are available once the submodule is loaded. All methods go in your
 <!-- tab: Examples -->
 ```csharp
 MusicRosterType roster = MusicRosterType.DEFAULT;
-bool isVanillaRoster = IsVanilla(roster);
+bool isVanillaRoster = AudioModule.IsVanilla(roster);
 ```
 <!-- tabs:end -->
 
@@ -82,7 +82,6 @@ bool isVanillaRoster = IsVanilla(roster);
 <!-- tab: Examples -->
 ```csharp
 MusicRosterType roster = MusicRosterType.DEFAULT;
-bool isVanillaRoster = IsVanilla(roster);
 ```
 <!-- tabs:end -->
 ### `AddMusicToRoster`
@@ -111,7 +110,8 @@ Manager.music.SetNewMusicPlaylist(roster);
 
 ```csharp
 // After adding the sound effect make sure to remember the SfxID
-var clip = CoreLib.LoadAsset<AudioClip>("Assets/myamazingmod/Music/my-sound-effect");
+// 'this' is either an `IMod` Interface, or a `LoadedMod` class.
+var clip = this.LoadAsset<AudioClip>("Assets/myamazingmod/Music/my-sound-effect");
 SfxID soundEffect = AudioModule.AddSoundEffect(clip);
 ```
 To play your sound effect you can use `EffectsManager` class methods as usual.
