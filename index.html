@@ -45,19 +45,15 @@
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     let versionParam = params.get("version");
-    console.log(versionParam);
     
     let versions = [
-        {folder: 'v3/', label: 'v3.x', name: '3', default: true},
-        {folder: 'v4/', label: 'v4.x', name: '4', default: false},
+        {folder: 'v4/', label: 'v4.x', name: '4', default: true},
+        {folder: 'v3/', label: 'v3.x', name: '3', default: false},
     ];
     let basePath = sessionStorage.getItem("basePath");
     
-    console.log(basePath);
-    
     if (basePath == null) {
-        console.log("Here");
-        let defaultVersion = versions.find((v) => versionParam != null ? v.name === versionParam : v.default).folder;
+        let defaultVersion = versions.find((v) => v.default).folder;
         sessionStorage.setItem("basePath", defaultVersion);
     }
     const versionFolder = sessionStorage.getItem("basePath");
@@ -85,7 +81,7 @@
             placeholder: 'Type to search',
             noData: 'No Results',
             // Headline depth, 1 - 6
-            depth: 2,
+            depth: 3,
             hideOtherSidebarContent: true,
             namespace: 'docs-' + versionFolder // Set a unique namespace for each version
         },
@@ -126,7 +122,8 @@
 
         //table of contents
         toc: {
-            title: 'Table of Contents'
+            title: 'Table of Contents',
+            headings: 'h1, h2, h3'
         },
 
         //remote markdown

@@ -1,5 +1,7 @@
 ﻿# Localization Bug
 
+?> **Note:** Move to using `DataTextBlocks` as of Core Keeper v1.2.0 [here](https://modding.corekeepergame.com/documentation/creating-mods/creating-a-mod/how-to-localize-your-mod)
+
 > Localizaiton.csv files are the root of setting up the text of the game in different languages.
 Unfortunately, there is a huge error occuring for mods.
 

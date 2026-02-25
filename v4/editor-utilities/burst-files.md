@@ -1,5 +1,7 @@
 ﻿# How to Build Burst Files
 
+!> Burst Code can now be removed via script. Refer to [BurstDisabler Example](https://modding.corekeepergame.com/mod-code-examples/burstdisabler-example).
+
 > The `CoreLibPackage` allows for burst files to be created.
 > The burst files are created on installation of the Mod.
 > Though this requires a bit of editing.

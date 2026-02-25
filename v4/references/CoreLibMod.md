@@ -47,23 +47,23 @@ This class is automatically instantiated by the PugMod loader and provides stati
 
 ## Field Summary
 
-| Modifier and Type | Field | Description |
-|------------------|-------|-------------|
-| `public const string` | `ID` | The unique identifier for CoreLib ("CoreLib") |
-| `public const string` | `Name` | The display name for CoreLib ("Core Library") |
-| `public const string` | `ConfigFolder` | The configuration folder path ("CoreLib/Config/") |
-| `public const string` | `Version` | The current CoreLib version ("4.0.0") |
-| `public static readonly GameVersion` | `BuildFor` | The target game version CoreLib was built for |
-| `internal static LoadedMod` | `ModInfo` | Metadata about the loaded CoreLib mod |
-| `internal static readonly Logger` | `Log` | Centralized logger instance for CoreLib |
-| `internal static SubmoduleHandler` | `SubmoduleHandler` | Manages submodule lifecycle and dependencies |
+| Modifier and Type                    | Field              | Description                                       |
+|--------------------------------------|--------------------|---------------------------------------------------|
+| `public const string`                | `ID`               | The unique identifier for CoreLib ("CoreLib")     |
+| `public const string`                | `Name`             | The display name for CoreLib ("Core Library")     |
+| `public const string`                | `ConfigFolder`     | The configuration folder path ("CoreLib/Config/") |
+| `public const string`                | `Version`          | The current CoreLib version ("4.0.0")             |
+| `public static readonly GameVersion` | `BuildFor`         | The target game version CoreLib was built for     |
+| `internal static LoadedMod`          | `ModInfo`          | Metadata about the loaded CoreLib mod             |
+| `internal static readonly Logger`    | `Log`              | Centralized logger instance for CoreLib           |
+| `internal static SubmoduleHandler`   | `SubmoduleHandler` | Manages submodule lifecycle and dependencies      |
 
 ---
 
 ## Constructor Summary
 
-| Constructor | Description |
-|------------|-------------|
+| Constructor           | Description                                     |
+|-----------------------|-------------------------------------------------|
 | `public CoreLibMod()` | Default constructor called by the PugMod loader |
 
 ---
@@ -72,27 +72,27 @@ This class is automatically instantiated by the PugMod loader and provides stati
 
 ### IMod Interface Methods
 
-| Modifier and Type | Method | Description |
-|------------------|--------|-------------|
-| `public void` | `EarlyInit()` | Called during early mod initialization phase |
-| `public void` | `Init()` | Called during standard mod initialization phase |
-| `public void` | `Shutdown()` | Called when the mod is being shut down |
-| `public void` | `ModObjectLoaded(Object)` | Called when a mod object is loaded |
-| `public void` | `Update()` | Called every frame |
+| Modifier and Type | Method                    | Description                                     |
+|-------------------|---------------------------|-------------------------------------------------|
+| `public void`     | `EarlyInit()`             | Called during early mod initialization phase    |
+| `public void`     | `Init()`                  | Called during standard mod initialization phase |
+| `public void`     | `Shutdown()`              | Called when the mod is being shut down          |
+| `public void`     | `ModObjectLoaded(Object)` | Called when a mod object is loaded              |
+| `public void`     | `Update()`                | Called every frame                              |
 
 ### Public Static Methods
 
-| Modifier and Type | Method | Description |
-|------------------|--------|-------------|
+| Modifier and Type    | Method                         | Description                              |
+|----------------------|--------------------------------|------------------------------------------|
 | `public static void` | `LoadSubmodule(params Type[])` | Requests loading of specified submodules |
 
 ### Internal Static Methods
 
-| Modifier and Type | Method | Description |
-|------------------|--------|-------------|
-| `internal static void` | `VerifyGameVersion(GameVersion)` | Verifies game version compatibility |
-| `internal static T` | `GetModuleInstance<T>()` | Retrieves a specific submodule instance |
-| `internal static void` | `Patch(Type)` | Applies a Harmony patch |
+| Modifier and Type      | Method                           | Description                             |
+|------------------------|----------------------------------|-----------------------------------------|
+| `internal static void` | `VerifyGameVersion(GameVersion)` | Verifies game version compatibility     |
+| `internal static T`    | `GetModuleInstance<T>()`         | Retrieves a specific submodule instance |
+| `internal static void` | `Patch(Type)`                    | Applies a Harmony patch                 |
 
 ---
 

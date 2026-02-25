@@ -1,2 +1,2 @@
-﻿[:fa fa-pen-to-square: Edit Document](https://github.com/CoreKeeperMods/CoreLib/blob/4.0.0-update/Assets/CoreLibPackage/CHANGELOG.md)
-[changelogURL](https://raw.githubusercontent.com/CoreKeeperMods/CoreLib/refs/heads/4.0.0-update/Assets/CoreLibPackage/CHANGELOG.md)
+﻿[:fa fa-pen-to-square: Edit Document](https://github.com/CoreKeeperMods/CoreLib/blob/main/Assets/CoreLibPackage/CHANGELOG.md)
+[changelogURL](https://raw.githubusercontent.com/CoreKeeperMods/CoreLib/refs/heads/main/Assets/CoreLibPackage/CHANGELOG.md)

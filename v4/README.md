@@ -1,19 +1,21 @@
 ﻿# Core Library <small>{{versionLabel}}</small>
-!> CoreLib 4.x is currently in development, and is not available at this time. Please go back to 3.x if you are looking for the latest CoreLib documentation.
-If want to see what we have in store for CoreLib 4.x, feel free to look around!
 
 ![CoreLib](pics/corelib-bg.png)
 
-> A modding library for Core Keeper that provides features that makes modding Core Keeper easier.
+> A modding library for Core Keeper that provides features to make modding Core Keeper simpler.
 
-!> **WARNING:** _Version 4.0.0_ may contain breaking changes. Please raise any bugs reports on [GitHub](https://github.com/CoreKeeperMods/CoreLib/issues).
+!> **WARNING:** _Version 4.0.0_ may contain breaking changes. Please raise any bug reports on [GitHub](https://github.com/CoreKeeperMods/CoreLib/issues).
 
-?> Before proceeding please be sure to read and follow the [guides](https://mod.io/g/corekeeper/r) on mod.io. They may not be perfect, but they will give you an idea and baseline for this.
+?> Before proceeding, please be sure to read the [Core Keeper Modding Guide](https://modding.corekeepergame.com). This will give you a baseline for modding Core Keeper.
+
+?> Additionally, you can read the [guides](https://mod.io/g/corekeeper/r) on mod.io and the [Modding Wiki](https://core-keeper-modding.gitbook.io/modding-wiki/), but they are usually outdated.
+
+> If you find any documentation mistakes, please raise an issue [here](https://github.com/CoreKeeperMods/corekeepermods.github.io/issues). This is a work in progress, so please be patient. Thank you!
 
 ## Mod Features
-- Custom items, blocks, enemies, NPC, etc.
-- Easier access to Rewired input system, localization
-- Custom chat commands
+- Add custom items, blocks, enemies, NPC, etc.
+- Easier access to the Control Mapping System, Localization
+- Add Custom Chat Commands
 - Scriptable Objects/Components for Unity Mod Creation
 - And much more!
 

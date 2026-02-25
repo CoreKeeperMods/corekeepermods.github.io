@@ -1,27 +1,7 @@
-﻿# Main Module
+# Submodules
 
-?> This documentation is a work in progress.
+> There are 9 submodules in CoreLib.
 
-> The main CoreLib module contains a lot of utility features to make modding easier.
-
-## Namespaces
-- `CoreLib`
-- `CoreLib.Data`
-- `CoreLib.Data.Configuration`
-- `CoreLib.Util`
-- `CoreLib.Util.Extension`
-- `CoreLib.Editor`
-- `CoreLib.Submodule.Audio`
-- `CoreLib.Submodule.Command`
-- `CoreLib.Submodule.ControlMapping`
-- `CoreLib.Submodule.Entity`
-- `CoreLib.Submodule.EquipmentSlot`
-- `CoreLib.Submodule.Localization`
-- `CoreLib.Submodule.LootDrop`
-- `CoreLib.Submodule.Tileset`
-- `CoreLib.Submodule.UserInterface`
-
-## Submodules
 - [<b>Audio Submodule</b>](modules/audio/ ':class=specialLink')
 - [<b>Command Submodule</b>](modules/command/ ':class=specialLink')
 - [<b>Control Mapping Submodule</b>](modules/control-mapping/ ':class=specialLink')

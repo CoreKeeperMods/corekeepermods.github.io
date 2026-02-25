@@ -10,6 +10,8 @@
 
 ## Build Burst Boolean
 
+!> Burst Code can now be removed via script. Refer to [BurstDisabler Example](https://modding.corekeepergame.com/mod-code-examples/burstdisabler-example).
+
 > A boolean has been added to allow for building Burst Files **(.dll)**.
 > If the boolean doesn't exist, a `Tutorial Link` and `Open Script` Button will appear.
 > Use these and follow the instructions in the tutorial.

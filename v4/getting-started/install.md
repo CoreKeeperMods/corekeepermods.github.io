@@ -30,7 +30,7 @@ Exit `Unity Hub` from the Windows Notification Area. ***Does not close on its ow
 
 Tag Version `#0.0.0`:
 ```json
-"ck.modding.corelib": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/CoreLibPackage#3.6.4",
+"ck.modding.corelib": "https://github.com/CoreKeeperMods/CoreLib.git?path=/Assets/CoreLibPackage#4.0.0",
 ```
 [List of CoreLib Tags](https://github.com/CoreKeeperMods/CoreLib/tags)
 
