@@ -1,7 +1,5 @@
 ﻿# Audio Submodule
 
-?> This documentation is a work in progress.
-
 > The Audio Submodule contains features to add music and sound effects.
 > 
 > *_Be sure you have added your desired audio files to your Unity Project Mod folder._
@@ -40,7 +38,6 @@ namespace MyNamespace
 		public void ModObjectLoaded(Object obj) { }
 
 		public void Update() { }
-		}
 	}
 }
 ```
@@ -81,25 +78,77 @@ bool isVanillaRoster = AudioModule.IsVanilla(roster);
 	- Description: The MusicRosterType of the newly created roster (int).
 <!-- tab: Examples -->
 ```csharp
-MusicRosterType roster = MusicRosterType.DEFAULT;
+MusicRosterType roster = AudioModule.AddCustomRoster();
 ```
 <!-- tabs:end -->
+
 ### `AddMusicToRoster`
+> Adds an audio clip to a custom music roster.
+
+<!-- tabs:start -->
+<!-- tab: Parameters -->
+- **`rosterType`**(`MusicRosterType`):
+	- Description: The MusicRosterType of the newly created roster (int).
+- **`music`** (`AssetReferenceT<AudioClip>`):
+	- Description: The address reference of the audio clip to add.
+- **`intro`** (`AssetReferenceT<AudioClip>`):
+	- Description: The address reference of the intro clip to add.
+<!-- tab: Examples -->
+```csharp
+MusicRosterType roster = AudioModule.AddCustomRoster();
+//'this' is an `IMod` Interface.
+LoadedMod modInfo = this.GetModInfo();
+AudioClip[] audiofiles = modInfo.LoadAudioFiles();
+AudioClip music = audiofiles.First(x => x.name == "myEpicMusic");
+AudioModule.AddMusicToRoster(roster, music);
+```
+<!-- tabs:end -->
 
 ### `AddEffect`
+> Registers a new custom effect (based on the `IEffect` interface) to CoreLib.
+
+<!-- tabs:start -->
+<!-- tab: Parameters -->
+- **`effect`**(`IEffect`):
+	- Description: The new effect to register based on the `IEffect` interface.
+<!-- tab: Returns -->
+- **`EffectID`**:
+	- Description: The EffectID of the newly created effect.
+<!-- tabs:end -->
 
 ### `AddSoundEffect`
+> Registers a new custom sound effect (based on the `AudioClip` class) to CoreLib.
+
+<!-- tabs:start -->
+<!-- tab: Parameters -->
+- **`effectClip`**(`AudioClip`):
+	- Description: The audio clip to register as a sound effect.
+<!-- tab: Returns -->
+- **`SfxID`**:
+	- Description: The SfxID of the newly created sound effect.
+<!-- tab: Examples -->
+```csharp
+//'this' is an `IMod` Interface.
+LoadedMod modInfo = this.GetModInfo();
+AudioClip[] audiofiles = modInfo.LoadAudioFiles();
+AudioClip clip = audiofiles.First(x => x.name == "my-sound-effect");
+SfxID soundEffect = AudioModule.AddSoundEffect(clip);
+```
+<!-- tabs:end -->
 
 ## Add Custom Music
 
-In your mod `EarlyInit()` method write:
+In your mod's `EarlyInit()` method write:
 ```csharp
 //You can add your own roster or use existing ones
 MusicManager.MusicRosterType roster = AudioModule.AddCustomRoster();
 
 //Now add music clip to a roster
-var clipRef = "Assets/MyMod/Music/myEpicMusic".AsAddress<AudioClip>();
-AudioModule.AddMusicToRoster(roster, clipRef);
+//'this' is an `IMod` Interface.
+LoadedMod modInfo = this.GetModInfo();
+AudioClip[] audiofiles = modInfo.LoadAudioFiles();
+AudioClip music = audiofiles.First(x => x.name == "myEpicMusic");
+AudioModule.AddMusicToRoster(roster, music);
 ```
 To play the music you can use `AudioManager` class methods as usual.
 ```csharp
@@ -108,13 +157,17 @@ Manager.music.SetNewMusicPlaylist(roster);
 
 ## Add Custom Sound Effects
 
+In your mod's `EarlyInit()` method write:
 ```csharp
 // After adding the sound effect make sure to remember the SfxID
-// 'this' is either an `IMod` Interface, or a `LoadedMod` class.
-var clip = this.LoadAsset<AudioClip>("Assets/myamazingmod/Music/my-sound-effect");
+// 'this' is an `IMod` Interface.
+LoadedMod modInfo = this.GetModInfo();
+var clip = modInfo.LoadAsset<AudioClip>("mySoundEffect");
 SfxID soundEffect = AudioModule.AddSoundEffect(clip);
 ```
 To play your sound effect you can use `EffectsManager` class methods as usual.
 ```csharp
 AudioManager.Sfx(soundEffect, position);
+//or
+Manager.audio.PlaySfx(soundEffect, position);
 ```

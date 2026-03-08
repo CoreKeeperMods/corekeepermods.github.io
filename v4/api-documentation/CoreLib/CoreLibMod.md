@@ -1,6 +1,6 @@
-Based on the context attachment, here's the comprehensive documentation for CoreLibMod.cs:
+# `CoreLibMod` Class
 
-# CoreLibMod Class Documentation
+?> This document is a work in progress.
 
 ## Namespace
 `CoreLib`

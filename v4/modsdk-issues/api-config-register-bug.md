@@ -43,3 +43,5 @@ config.Value = API.Config.Get<int>(ModID, "Multiplier", "MaxSpeed");
 ```
 
 <!-- tabs:end -->
+
+---

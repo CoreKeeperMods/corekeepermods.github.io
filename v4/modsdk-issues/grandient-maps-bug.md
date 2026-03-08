@@ -1,6 +1,6 @@
 ﻿# Gradient Maps Not Working
 
-?> Invalid as of version 1.2.0
+?> **Note:** Move to using `GradientMapDataBlocks` as of Core Keeper v1.2.0.
 
 > Gradient Maps are an important part of modding if you want to color multiple object variants with the same Asset Skin, but different colorations.
 

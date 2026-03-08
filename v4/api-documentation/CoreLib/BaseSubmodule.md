@@ -1,4 +1,6 @@
-# BaseSubmodule Class Documentation
+# `BaseSubmodule` Class
+
+?> This document is a work in progress.
 
 ## Namespace
 `CoreLib`

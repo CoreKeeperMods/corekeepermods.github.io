@@ -36,7 +36,6 @@ namespace MyNamespace
 		public void ModObjectLoaded(Object obj) { }
 
 		public void Update() { }
-		}
 	}
 }
 ```
@@ -91,11 +90,11 @@ int newCategoryId = AddNewCategory("MyCategory");
 	- Default Value: `-1` (default to Mod Category).
 
 <!-- tab: Examples -->
-### W/O Category Example
+#### w/o Category Example
 ```csharp
 AddKeyboardBind("Action1", KeyboardKeyCode.S, ModifierKey.Control);
 ```
-### W/ Category Example
+#### w/ Category Example
 ```csharp
 int categoryID = AddNewCategory("MyCategory");
 AddKeyboardBind("Action1", KeyboardKeyCode.A, categoryId: categoryID);

@@ -36,7 +36,6 @@ namespace MyNamespace
 		public void ModObjectLoaded(Object obj) { }
 
 		public void Update() { }
-		}
 	}
 }
 ```
@@ -81,7 +80,7 @@ namespace MyNamespace
 > 
 > A component that allows the reskinning of crafting buildings.
 > 
-> **This component is reliant on `ObjectAuthoring`'s or `EntityMonoBehaviourData`'s graphical prefab.
+> **Note: This component is reliant on `ObjectAuthoring`'s or `EntityMonoBehaviourData`'s graphical prefab.**
 
 ![Mod Reskin Condition](pics/mod-reskin-condition-1.png ':size=45%')
 
@@ -150,4 +149,5 @@ namespace MyNamespace
 
 
 ## Additional Notes
-?> The scripts that were required in the method `ModObjectLoaded()` for version 3.x are now automatically loaded by the submodule by finding the scriptable objects and components.
+?> `SupportsCoreLib`, `SupportsPooling`, and `Workbench Definition` are now automatically registered by the submodule.
+The scripts that were required in the method `ModObjectLoaded()` for version 3.x are now automatically loaded by the submodule by finding the scriptable objects and components of your mod.

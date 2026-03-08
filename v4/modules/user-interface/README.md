@@ -41,7 +41,6 @@ namespace MyNamespace
 		public void ModObjectLoaded(Object obj) { }
 
 		public void Update() { }
-		}
 	}
 }
 ```

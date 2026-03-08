@@ -59,8 +59,6 @@
     const versionFolder = sessionStorage.getItem("basePath");
     window.$docsify = {
         name: 'Core Library',
-        vueGlobalOptions: {
-        },
         auto2top: true,
         loadSidebar: true,
         loadNavbar: false,
@@ -68,11 +66,13 @@
         subMaxLevel: 0,
         repo: 'https://github.com/CoreKeeperMods/CoreLib',
         alias: {
-            '/.*/_sidebar.md': '/_sidebar.md',
+            '/.*/_sidebar.md': `/${sessionStorage.getItem("basePath")}/_sidebar.md`,
+            '/modsdk-bug-fixes/(.*)': '/modsdk-issues/$1',
         },
         basePath: sessionStorage.getItem("basePath"),
         versions: versions,
         versionSelectorLabel: 'Version',
+        formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}',
         
         // Search Plugin Configuration
         search: {
@@ -158,8 +158,10 @@
         breadcrumb: {
             size: 'normal',
             alias: {
-                'modsdk-bug-fixes': 'ModSDK Bug Fixes',
+                'modsdk-bug-fixes': 'ModSDK Issues',
+                'modsdk-issues': 'ModSDK Issues',
                 'modules': 'Main Module',
+                'api-documentation': 'API Documentation'
             }
         },
     };
@@ -174,7 +176,7 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-select@1"></script>
-<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="js/docsify-pagination-plugin.js"></script>
 <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
 <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-mustache"></script>
