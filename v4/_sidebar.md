@@ -1,6 +1,7 @@
 - [<b>Home</b>](/ "Core Library")
 - [<b>Getting Started</b>](getting-started/)
   - [Install](getting-started/install.md)
+  - [Migration Guide](getting-started/migration-guide.md)
 - [<b>Editor Utilities</b>](editor-utilities/)
   - [Chain Builder](editor-utilities/chain-builder.md)
   - [Entity Mono Behaviour](editor-utilities/entity-mono-behaviour.md)
