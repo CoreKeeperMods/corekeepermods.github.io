@@ -9,4 +9,4 @@
 | Type  | Name                  | Description                                                                                                                |
 |-------|-----------------------|----------------------------------------------------------------------------------------------------------------------------|
 | Class | `EquipmentSlotModule` | Equipment module that manages equipment slots, object types, emotes, and associated logic for extending mod functionality. |
-| Class | `SlotInfo`            | No summary available.                                                                                                      |
+| Class | `SlotInfo`            | Internal data class holding infomation about registered mod equipment slots                                                |

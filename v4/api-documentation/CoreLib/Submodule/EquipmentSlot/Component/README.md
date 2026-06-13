@@ -6,6 +6,7 @@
 
 ## Summary
 
-| Type  | Name                     | Description           |
-|-------|--------------------------|-----------------------|
-| Class | `ModObjectTypeAuthoring` | No summary available. |
+| Type  | Name                     | Description                                                                                        |
+|-------|--------------------------|----------------------------------------------------------------------------------------------------|
+| Class | `ModObjectTypeAuthoring` | Component to define a modded ObjectType for a tool.                                                |
+| Class | `ModToolSizeAuthoring`   | Authoring to set prefabTileSize for modded tools that want the tool to apply to more tiles at once |

@@ -1,7 +1,5 @@
 ﻿# Equipment Slot Submodule
 
-?> This documentation is a work in progress.
-
 > The Equipment Slot Submodule contains features to add/modify equipment slots more easily.
 
 ## Usage Example
@@ -12,10 +10,10 @@ Then create a new class inheriting either from `EquipmentSlot` or `PlaceObjectSl
 
 You also need to create a *logic* class. It must implement `IEquipmentLogic` and optionally `IPlacementLogic` if your slot is related to placing things. It is a separate class because while `EquipmentSlot` is a client sided class, the logic must be present on all sides. Additionally, their lifecycles do not overlap in a meaningful way
 
-Please note that logic class MUST NEVER access data that outside of its context. The reason is that this code is being run as a part of a ECS system on both clients and server. The only exception can be static data such as configuration.
+Please note that logic class MUST NEVER access data that outside of its context. The reason is that this code is being run as a part of an ECS system on both clients and server. The only exception can be static data such as configuration (Please note that configuration must be the same, or there will be issues in multiplayer)
 
 ### Slot Class
-```cs
+```csharp
 public class WrenchEquipmentSlot : PlaceObjectSlot, IModEquipmentSlot
 {
     // This string is a unique id of object type we are creating. 
@@ -43,12 +41,13 @@ public class WrenchEquipmentSlot : PlaceObjectSlot, IModEquipmentSlot
 }
 ```
 ### Logic Class
-```cs
+```csharp
 public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
 {
     // These control some behaviour logic common to slots
     public bool CanUseWhileSitting => false;
     public bool CanUseWhileOnBoat => false;
+    public bool CanResize => false;
 
     // In order to access custom components, create a lookup class
     private ComponentLookup<WrenchCD> wrenchCDLookup;
@@ -68,11 +67,34 @@ public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
     // Included variables include the equipment aspect and some shared data.
     // From them you can access some components and other data, such as:
     // current tick, database bank, physics world, tile accessor, ecb, etc.
-    public bool Update( EquipmentUpdateAspect equipmentAspect, EquipmentUpdateSharedData sharedData, LookupEquipmentUpdateData lookupData, bool interactHeld, bool secondInteractHeld)
+    public bool Update(
+        EquipmentUpdateAspect aspect,
+        EquipmentUpdateSharedData sharedData,
+        LookupEquipmentUpdateData lookupData,
+        bool interactHeld,
+        bool secondInteractHeld,
+        bool hasItemInMouse)
     {
-        // First we update the placement position
+        // Like this we can read some info about currently held item
+        var objectData = aspect.equippedObjectCD.ValueRO.containedObject.objectData;
+        ref var objectInfo = ref PugDatabase.GetEntityObjectInfo(objectData.objectID, sharedData.databaseBank.databaseBankBlob, objectData.variation);
+            
+        if (objectInfo.objectID == ObjectID.None || objectInfo.prefabEntities.Length <= 0) return false;
+            
+        var prefabEntity = objectInfo.prefabEntities[0];
+        
+        // Here we can check if our component is present
+        if (!_wrenchLookup.HasComponent(prefabEntity)) return false;
+        WrenchCD wrenchCd = _wrenchLookup[prefabEntity];
+        
+        // Now we update the placement position
         var nativeList = new NativeList<PlacementHandler.EntityAndInfoFromPlacement>(Allocator.Temp);
-        PlacementHandler.UpdatePlaceablePosition( equipmentAspect.equippedObjectCD.ValueRO.equipmentPrefab, ref nativeList, equipmentAspect, sharedData, lookupData);
+        PlacementHandler.UpdatePlaceablePosition(
+            aspect.equippedObjectCD.ValueRO.equipmentPrefab,
+            ref nativeList,
+            aspect,
+            sharedData,
+            lookupData);
         nativeList.Dispose();
 
         // Check if user actually used the tool
@@ -82,18 +104,6 @@ public class WrenchSlotLogic : IEquipmentLogic, IPlacementLogic
         ref PlacementCD placement = ref equipmentAspect.placementCD.ValueRW;
 
         var pos = placement.bestPositionToPlaceAt;
-
-        // Like this we can read some info about currently held item
-        ObjectDataCD objectData = equipmentAspect.equippedObjectCD.ValueRO.containedObject.objectData;
-        var prefabEntity = PugDatabase.GetPrimaryPrefabEntity(
-            objectData.objectID,
-            sharedData.databaseBank.databaseBankBlob,
-            objectData.variation
-        );
-
-        // Here we can check if our component is present
-        if (!wrenchCDLookup.HasComponent(prefabEntity)) return false;
-        WrenchCD wrenchCd = wrenchCDLookup[prefabEntity];
 
         // And now do our logic
         // Return true if action has succeded.
@@ -130,3 +140,32 @@ To use the equipment slot you must also add an item, which uses a custom ObjectT
 ### Example
 
 ![Example item](pics/example-item.png)<br>
+
+## Resizeable slots
+If you want your tool to be resizeable set `CanResize` property in your logic class to true. Additionally, your tool prefabs must have the following components: `ResizableTileSizeAuthoring` and `ModToolSizeAuthoring`. Second component allows you set max tool size
+
+CoreLib will handle switching the size, and to get current size in your logic class do this:
+
+```csharp
+int2 toolSize = EquipmentSlot.GetTileSizeFromVariation(aspect.equipmentSlotCD.ValueRO, in aspect.placementSizeByEquipmentTypeBuffer, objectInfo.prefabTileSize); 
+```
+
+## Registering custom emotes
+Equipment slot module also allows to register custom emotes to show to player (emote is a text appearing on screen in response to some action, like "My mining damage is too low")
+
+In your `EarlyInit` do this:
+```csharp
+internal static Emote.EmoteType emoteMyMessage;
+
+emoteMyMessage = EquipmentSlotModule.RegisterTextEmote($"{MOD_ID}:MyMessage");
+```
+
+Then in your `TextDataBlock` directory create folder called `Emotes` and text data block inside called `MOD_{MOD_ID}:MyMessage` with your localized message.
+
+To spawn your emote call this method:
+
+```csharp
+EquipmentSlotModule.SpawnModEmoteText(position, emoteMyMessage);
+```
+
+By default, mod emotes replace previous ones spawned
